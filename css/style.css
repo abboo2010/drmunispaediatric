@@ -181,7 +181,10 @@ svg{display:block}
   background:#fff;border-radius:var(--radius-lg);padding:40px;box-shadow:var(--shadow-2);max-width:460px;
 }
 .appointment-card h2{font-size:24px;margin-bottom:6px}
-.appointment-card > p{color:var(--slate);font-size:14.5px;margin-bottom:22px}
+.appointment-card .form-card-head p{color:var(--slate);font-size:14.5px;margin-bottom:22px}
+.appointment-card .form-card-head{text-align:left}
+.appointment-card .form-card-head h2, .appointment-card .form-card-head p{text-align:left}
+.appointment-card .form-card-logo{margin:0 0 14px}
 .appointment-visual{
   height:100%;display:flex;flex-direction:column;justify-content:center;position:relative;
   border-left:1px solid rgba(255,255,255,0.12);padding-left:56px;
@@ -348,6 +351,15 @@ footer .footer-hours li span:first-child{color:var(--ink);font-weight:500}
 .contact-row h4{color:#fff;font-size:14px;margin-bottom:4px;font-family:'Inter',sans-serif;font-weight:600}
 .contact-row p{color:rgba(255,255,255,0.7);font-size:14px;margin-bottom:0}
 .form-card{background:#fff;border-radius:var(--radius-lg);padding:44px;box-shadow:var(--shadow-1);border:1px solid var(--line)}
+.form-card-head{text-align:center}
+.form-card-logo{width:52px;height:52px;border-radius:50%;display:block;margin:0 auto 14px;object-fit:cover;border:1px solid var(--line)}
+.form-card-head h3{text-align:center}
+.form-card-head p{text-align:center}
+.form-success{display:none;text-align:center;padding:12px 0 4px}
+.form-success.show{display:block}
+.fs-icon{width:56px;height:56px;border-radius:50%;background:var(--sky);color:var(--blue);display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+.form-success h3{font-size:19px;margin-bottom:8px}
+.form-success p{color:var(--slate);font-size:14.5px;margin-bottom:22px;max-width:340px;margin-left:auto;margin-right:auto}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
 .form-field{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
 .form-field label{font-size:13px;font-weight:600;color:var(--navy)}

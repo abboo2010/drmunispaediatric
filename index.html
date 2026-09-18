@@ -108,14 +108,23 @@
     <div class="appointment-grid">
       <div class="appointment-form-wrap">
         <div class="appointment-card">
-          <h2>Get Your Appointment</h2>
-          <p>Book a consultation online at a time that works for your family.</p>
-          <form>
-            <div class="form-field"><label>Parent / Guardian Name</label><input type="text" placeholder="Your name"></div>
-            <div class="form-field"><label>Phone Number</label><input type="tel" placeholder="e.g. 012-345 6789"></div>
+          <div class="form-card-head">
+            <img src="img/logo-mark.png" alt="Dr. Muniswaran A/L Nadesin logo" class="form-card-logo">
+            <h2>Get Your Appointment</h2>
+            <p>Book a consultation online at a time that works for your family.</p>
+          </div>
+          <form class="ajax-form">
+            <div class="form-field"><label>Parent / Guardian Name</label><input type="text" placeholder="Your name" required></div>
+            <div class="form-field"><label>Phone Number</label><input type="tel" placeholder="e.g. 012-345 6789" required></div>
             <div class="form-field"><label>Reason for Visit</label><textarea rows="3" placeholder="Briefly describe the concern"></textarea></div>
             <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center">Book An Appointment</button>
           </form>
+          <div class="form-success">
+            <div class="fs-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+            <h3>Thank you!</h3>
+            <p>Your appointment request has been received. Our clinic team will contact you shortly to confirm a time.</p>
+            <button type="button" class="btn btn--ghost form-success-reset">Submit Another Request</button>
+          </div>
         </div>
       </div>
       <div class="appointment-visual">

@@ -67,17 +67,26 @@
       </div>
 
       <div class="form-card">
-        <h3 style="font-size:20px;margin-bottom:6px">Request an appointment</h3>
-        <p style="color:var(--slate);font-size:14.5px;margin-bottom:26px">Fill in the form and the clinic will contact you to confirm a time.</p>
-        <form>
+        <div class="form-card-head">
+          <img src="img/logo-mark.png" alt="Dr. Muniswaran A/L Nadesin logo" class="form-card-logo">
+          <h3 style="font-size:20px;margin-bottom:6px">Request an appointment</h3>
+          <p style="color:var(--slate);font-size:14.5px;margin-bottom:26px">Fill in the form and the clinic will contact you to confirm a time.</p>
+        </div>
+        <form class="ajax-form">
           <div class="form-row">
-            <div class="form-field"><label>Parent / Guardian Name</label><input type="text" placeholder="Your name"></div>
-            <div class="form-field"><label>Phone Number</label><input type="tel" placeholder="e.g. 012-345 6789"></div>
+            <div class="form-field"><label>Parent / Guardian Name</label><input type="text" placeholder="Your name" required></div>
+            <div class="form-field"><label>Phone Number</label><input type="tel" placeholder="e.g. 012-345 6789" required></div>
           </div>
           <div class="form-field"><label>Child's Age</label><input type="text" placeholder="e.g. 4 years old"></div>
           <div class="form-field"><label>Reason for Visit</label><textarea rows="4" placeholder="Briefly describe the concern"></textarea></div>
           <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center">Submit Request</button>
         </form>
+        <div class="form-success">
+          <div class="fs-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <h3>Thank you!</h3>
+          <p>Your appointment request has been received. Our clinic team will contact you shortly to confirm a time.</p>
+          <button type="button" class="btn btn--ghost form-success-reset">Submit Another Request</button>
+        </div>
       </div>
     </div>
 
