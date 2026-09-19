@@ -138,6 +138,7 @@ svg{display:block}
 /* About split with floating card, like Medizo's Open-Hours block */
 .about-split{display:grid;grid-template-columns:0.95fr 1.05fr;gap:64px;align-items:center}
 .about-split--portrait{grid-template-columns:0.72fr 1.28fr}
+.section--tight{padding:40px 0}
 .about-photo-caption{text-align:center;margin-top:16px}
 .about-photo-caption strong{display:block;color:var(--navy);font-size:15px;font-family:'Inter',sans-serif;font-weight:600}
 .about-photo-caption span{display:block;color:var(--blue);font-size:13px;margin-top:2px}
