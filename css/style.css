@@ -362,6 +362,7 @@ footer .footer-hours li span:first-child{color:var(--ink);font-weight:500}
 .form-card-head p{text-align:center}
 .form-success{display:none;text-align:center;padding:12px 0 4px}
 .form-success.show{display:block}
+.form-success-logo{width:44px;height:44px;border-radius:50%;display:block;margin:0 auto 14px;object-fit:cover;border:1px solid var(--line)}
 .fs-icon{width:56px;height:56px;border-radius:50%;background:var(--sky);color:var(--blue);display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
 .form-success h3{font-size:19px;margin-bottom:8px}
 .form-success p{color:var(--slate);font-size:14.5px;margin-bottom:22px;max-width:340px;margin-left:auto;margin-right:auto}
