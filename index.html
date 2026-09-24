@@ -121,9 +121,11 @@
             <h2>Get Your Appointment</h2>
             <p>Book a consultation online at a time that works for your family.</p>
           </div>
-          <form class="ajax-form" name="appointment-home" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="appointment-home">
-            <p style="display:none"><label>Do not fill: <input name="bot-field"></label></p>
+          <form class="ajax-form" method="POST" action="https://api.web3forms.com/submit">
+            <input type="hidden" name="access_key" value="d604ba70-6ee6-4380-947d-a93ba5e1c224">
+            <input type="hidden" name="subject" value="New appointment request - website (Home page)">
+            <input type="hidden" name="from_name" value="Dr. Muniswaran Website">
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
             <div class="form-field"><label>Parent / Guardian Name</label><input name="name" type="text" placeholder="Your name" required></div>
             <div class="form-field"><label>Phone Number</label><input name="phone" type="tel" placeholder="e.g. 012-345 6789" required></div>
             <div class="form-field"><label>Reason for Visit</label><textarea name="message" rows="3" placeholder="Briefly describe the concern"></textarea></div>

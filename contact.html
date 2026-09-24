@@ -80,9 +80,11 @@
           <h3 style="font-size:20px;margin-bottom:6px">Request an appointment</h3>
           <p style="color:var(--slate);font-size:14.5px;margin-bottom:26px">Fill in the form and the clinic will contact you to confirm a time.</p>
         </div>
-        <form class="ajax-form" name="appointment-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="appointment-contact">
-            <p style="display:none"><label>Do not fill: <input name="bot-field"></label></p>
+        <form class="ajax-form" method="POST" action="https://api.web3forms.com/submit">
+            <input type="hidden" name="access_key" value="d604ba70-6ee6-4380-947d-a93ba5e1c224">
+            <input type="hidden" name="subject" value="New appointment request - website (Contact page)">
+            <input type="hidden" name="from_name" value="Dr. Muniswaran Website">
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
           <div class="form-row">
             <div class="form-field"><label>Parent / Guardian Name</label><input name="name" type="text" placeholder="Your name" required></div>
             <div class="form-field"><label>Phone Number</label><input name="phone" type="tel" placeholder="e.g. 012-345 6789" required></div>
