@@ -434,7 +434,8 @@ footer .footer-hours li span:first-child{color:var(--ink);font-weight:500}
   color:var(--navy);font-size:13.5px;font-weight:600;box-shadow:var(--shadow-1);transition:transform .15s ease,border-color .15s ease,color .15s ease}
 .sv-jump a svg{color:var(--blue)}
 .sv-jump a:hover{transform:translateY(-2px);border-color:var(--blue);color:var(--blue-dark)}
-.sv-section{padding-top:56px}
+.sv-section{padding-top:20px}
+.page-hero--tight{padding-bottom:20px}
 [id="focus"],[id="general"],[id="newborn"],[id="ages"]{scroll-margin-top:110px}
 
 .sv-feature{display:grid;grid-template-columns:1.15fr 1fr;gap:0;border-radius:28px;overflow:hidden;
@@ -488,7 +489,7 @@ footer .footer-hours li span:first-child{color:var(--ink);font-weight:500}
   .sv-head{margin-top:64px}
 }
 @media (max-width:640px){
-  .sv-section{padding-top:36px}
+  .sv-section{padding-top:16px}
   .sv-feature{border-radius:22px}
   .sv-feature h2{font-size:27px}
   .sv-feature-copy{padding:32px 22px 8px}
@@ -498,3 +499,34 @@ footer .footer-hours li span:first-child{color:var(--ink);font-weight:500}
   .sv-jump a{padding:9px 14px;font-size:13px}
 }
 @media (prefers-reduced-motion:reduce){.sv-card,.sv-benefit,.sv-jump a{transition:none}.sv-card:hover,.sv-benefit:hover,.sv-jump a:hover{transform:none}}
+
+/* ===== Compact spacing (tighter gaps site-wide). Delete this block to restore the roomier layout. ===== */
+@media (min-width:641px){
+  .section{padding:60px 0}
+  .section--tight{padding:32px 0}
+  .page-hero{padding:40px 0 36px}
+  .page-hero--tight{padding-bottom:16px}
+  .section-head{margin-bottom:36px}
+  .hero{padding-top:44px}
+  .hero-grid{gap:48px}
+  .about-split{gap:48px}
+  .appointment-form-wrap{padding:40px 0}
+  .cta-diagonal{padding-top:60px;padding-bottom:60px}
+  footer{padding-top:48px}
+  .timeline-item{margin-bottom:24px}
+  .contact-grid{gap:36px}
+  .sv-section{padding-top:16px}
+  .sv-head{margin-top:52px}
+}
+@media (max-width:640px){
+  .section{padding:44px 0}
+  .section--tight{padding:28px 0}
+  .page-hero{padding:32px 0 28px}
+  .page-hero--tight{padding-bottom:14px}
+  .section-head{margin-bottom:28px}
+  .hero{padding-top:32px}
+  .cta-diagonal{padding-top:48px;padding-bottom:48px}
+  footer{padding-top:40px}
+  .sv-section{padding-top:14px}
+  .sv-head{margin-top:40px}
+}
