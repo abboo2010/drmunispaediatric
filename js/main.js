@@ -20,9 +20,20 @@ document.addEventListener('DOMContentLoaded', function () {
         form.reportValidity();
         return;
       }
-      form.style.display = 'none';
-      if (head) head.style.display = 'none';
-      if (success) success.classList.add('show');
+      var btn = form.querySelector('button[type=submit]');
+      if (btn) btn.disabled = true;
+      var body = new URLSearchParams(new FormData(form)).toString();
+      fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
+        .then(function (r) {
+          if (!r.ok) throw new Error('bad status');
+          form.style.display = 'none';
+          if (head) head.style.display = 'none';
+          if (success) success.classList.add('show');
+        })
+        .catch(function () {
+          alert('Sorry, something went wrong. Please call or WhatsApp the clinic directly.');
+        })
+        .then(function () { if (btn) btn.disabled = false; });
     });
 
     var resetBtn = success ? success.querySelector('.form-success-reset') : null;
