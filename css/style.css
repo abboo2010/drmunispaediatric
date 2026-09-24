@@ -416,3 +416,13 @@ footer .footer-hours li span:first-child{color:var(--ink);font-weight:500}
   .gallery-tile--wide{grid-column:span 1}
   .form-card, .contact-card{padding:28px}
 }
+
+/* Under-construction ticker */
+.ticker{background:var(--navy);color:#fff;overflow:hidden;white-space:nowrap;font-size:13.5px;font-weight:500;letter-spacing:.01em;position:relative;z-index:60}
+.ticker-track{display:inline-flex;animation:ticker-scroll 60s linear infinite;will-change:transform}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-item{display:inline-block;padding:10px 64px 10px 0}
+.ticker-item::before{content:"\26A0\FE0E";margin-right:10px;color:#f5c04a}
+.ticker a{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:2px}
+@keyframes ticker-scroll{from{transform:translateX(0)}to{transform:translateX(-25%)}}
+@media (prefers-reduced-motion:reduce){.ticker{white-space:normal;text-align:center;padding:8px 16px}.ticker-track{animation:none;display:block}.ticker-item:nth-child(n+2){display:none}.ticker-item{padding:0}}
