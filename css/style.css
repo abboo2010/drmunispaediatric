@@ -639,3 +639,30 @@ footer .footer-hours li span:first-child{color:var(--ink);font-weight:500}
   .gl-prev{left:18px}.gl-next{right:18px}
 }
 @media (prefers-reduced-motion:reduce){.gl-thumb img,.gl-tab{transition:none}}
+
+
+/* ===== Hero trust cards (refined) ===== */
+.hero-trust{gap:24px;padding-bottom:48px}
+.trust-card{--accent:var(--blue);display:flex;flex-direction:column;padding:28px 26px 24px;border-radius:20px;overflow:hidden;color:inherit;
+  background:linear-gradient(180deg,#fff 0%,var(--sky-2) 100%);border:1px solid var(--line);box-shadow:var(--shadow-1);
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.trust-card::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:linear-gradient(90deg,var(--accent),color-mix(in srgb,var(--accent) 55%,#fff))}
+.trust-card::after{content:"";position:absolute;right:-60px;bottom:-60px;width:180px;height:180px;border-radius:50%;
+  background:radial-gradient(circle,color-mix(in srgb,var(--accent) 14%,transparent),transparent 70%);pointer-events:none;transition:transform .3s ease}
+.trust-card--blue{--accent:var(--blue)}
+.trust-card--teal{--accent:var(--teal)}
+.trust-card--navy{--accent:var(--navy-2)}
+.trust-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-2);border-color:color-mix(in srgb,var(--accent) 35%,var(--line))}
+.trust-card:hover::after{transform:scale(1.25)}
+.trust-card:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.tc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.trust-card .tc-icon{width:56px;height:56px;border-radius:17px;margin:0;color:#fff;
+  background:linear-gradient(145deg,var(--accent),color-mix(in srgb,var(--accent) 70%,#000));box-shadow:0 10px 22px color-mix(in srgb,var(--accent) 35%,transparent)}
+.tc-num{font:700 34px/1 'Source Serif 4',Georgia,serif;color:color-mix(in srgb,var(--accent) 22%,#fff);letter-spacing:-.02em}
+.trust-card h3{font-family:'Source Serif 4',Georgia,serif;font-size:21px;line-height:1.25;font-weight:600;color:var(--navy);margin:0 0 8px}
+.trust-card p{font-size:14.5px;line-height:1.6;color:var(--slate);margin:0 0 18px;flex:1;position:relative;z-index:1}
+.tc-link{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--accent);position:relative;z-index:1}
+.tc-link svg{transition:transform .2s ease}
+.trust-card:hover .tc-link svg{transform:translateX(5px)}
+@media (max-width:980px){.hero-trust{gap:16px}.trust-card{padding:22px 20px 20px}}
+@media (prefers-reduced-motion:reduce){.trust-card,.trust-card::after,.tc-link svg{transition:none}.trust-card:hover{transform:none}}
