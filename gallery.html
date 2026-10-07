@@ -40,20 +40,25 @@
   </div>
 </header>
 
-<section class="page-hero">
+<section class="page-hero page-hero--tight">
   <div class="container">
     <div class="eyebrow" style="justify-content:center">Gallery</div>
-    <h1>A look inside the clinic</h1>
-    <p>Real photography is being scheduled — this gallery will be updated with clinic and portrait images soon.</p>
+    <h1>Gallery</h1>
+    <p>Photographs for each of our services, plus a look inside the clinic. Choose a service to browse.</p>
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="notice">
-      <span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 3.9 2.5 17a2 2 0 0 0 1.7 3h15.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg></span>
-      <span>Placeholder gallery — real clinic and portrait photography to be added once available.</span>
+<section class="section gl-section">
+  <div class="container" id="svcGallery">
+    <div class="gl-tabs" role="tablist" aria-label="Gallery sections">
+      <button type="button" class="gl-tab gl-tab--clinic" data-clinic role="tab" aria-selected="false">The Clinic</button>
     </div>
+    <div class="gl-panels">
+      <div class="gl-panel" data-clinic-panel role="tabpanel" hidden>
+        <div class="notice">
+          <span class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 3.9 2.5 17a2 2 0 0 0 1.7 3h15.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg></span>
+          <span>Placeholder gallery — real clinic and portrait photography to be added once available.</span>
+        </div>
     <div class="gallery-bento">
       <div class="gallery-tile gallery-tile--wide">
         <div class="g-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M9 8h1M14 8h1M9 12h1M14 12h1M9 16h1M14 16h1"/><path d="M10 21v-4h4v4"/></svg></div>
@@ -76,8 +81,17 @@
         <span>Patient Care Area</span><small>Coming soon</small>
       </div>
     </div>
+      </div>
+    </div>
   </div>
 </section>
+
+<dialog class="gl-box" id="glBox" aria-label="Photo viewer">
+  <button type="button" class="gl-x" aria-label="Close">&times;</button>
+  <button type="button" class="gl-nav gl-prev" aria-label="Previous photo">&#8249;</button>
+  <figure><img alt=""><figcaption class="gl-cap"></figcaption></figure>
+  <button type="button" class="gl-nav gl-next" aria-label="Next photo">&#8250;</button>
+</dialog>
 
 <section class="cta-diagonal">
   <div class="container">
@@ -136,5 +150,6 @@
 </footer>
 <a class="wa-float" href="https://wa.me/60106696074" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="WhatsApp: 010-669 6074"><svg width="28" height="28" viewBox="0 0 32 32" fill="currentColor"><path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.2.58 4.27 1.6 6.06L4 29l8.14-1.55a12.9 12.9 0 0 0 3.88.6c6.62 0 12.02-5.4 12.02-12.03C28.04 8.4 22.64 3 16.02 3Zm0 21.9c-1.85 0-3.6-.5-5.1-1.4l-.37-.22-3.86.74.77-3.77-.24-.38a9.87 9.87 0 0 1-1.53-5.35c0-5.47 4.46-9.93 9.94-9.93 5.47 0 9.93 4.46 9.93 9.93 0 5.48-4.46 9.94-9.94 9.94Zm5.44-7.44c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.24-.46-2.37-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35Z"/></svg></a>
 <script src="js/main.js"></script>
+<script src="js/gallery.js"></script>
 </body>
 </html>
