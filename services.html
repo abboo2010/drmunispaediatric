@@ -64,7 +64,7 @@
         <p>Common surgical conditions in children</p>
       </div>
       <div class="os-body">
-        <div class="os-label">Conditions</div><ul class="os-list"><li>Appendicitis</li><li>Inguinal hernia</li><li>Undescended testis &amp; torsion of the testis</li><li>Repair of lacerations</li><li>Burn injuries</li><li>Hydrocoele</li><li>Tongue tie</li><li>Lumps and bumps</li></ul>
+        <div class="os-label">Conditions <span class="os-hint">&middot; tap any item to learn more</span></div><ul class="os-list"><li><button type="button" class="os-item" data-info="appendicitis">Appendicitis<span class="os-i" aria-hidden="true">i</span></button></li><li><button type="button" class="os-item" data-info="inguinal-hernia">Inguinal hernia<span class="os-i" aria-hidden="true">i</span></button></li><li><button type="button" class="os-item" data-info="undescended-testis">Undescended testis &amp; torsion of the testis<span class="os-i" aria-hidden="true">i</span></button></li><li><button type="button" class="os-item" data-info="lacerations">Repair of lacerations<span class="os-i" aria-hidden="true">i</span></button></li><li><button type="button" class="os-item" data-info="burns">Burn injuries<span class="os-i" aria-hidden="true">i</span></button></li><li><button type="button" class="os-item" data-info="hydrocoele">Hydrocoele<span class="os-i" aria-hidden="true">i</span></button></li><li><button type="button" class="os-item" data-info="tongue-tie">Tongue tie<span class="os-i" aria-hidden="true">i</span></button></li><li><button type="button" class="os-item" data-info="lumps-bumps">Lumps and bumps<span class="os-i" aria-hidden="true">i</span></button></li></ul>
       </div>
     </article>
     <article class="os-block os-block--teal" id="neonatal">
@@ -167,6 +167,41 @@
   </div>
 </footer>
 <a class="wa-float" href="https://wa.me/60106696074" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" title="WhatsApp: 010-669 6074"><svg width="28" height="28" viewBox="0 0 32 32" fill="currentColor"><path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.2.58 4.27 1.6 6.06L4 29l8.14-1.55a12.9 12.9 0 0 0 3.88.6c6.62 0 12.02-5.4 12.02-12.03C28.04 8.4 22.64 3 16.02 3Zm0 21.9c-1.85 0-3.6-.5-5.1-1.4l-.37-.22-3.86.74.77-3.77-.24-.38a9.87 9.87 0 0 1-1.53-5.35c0-5.47 4.46-9.93 9.94-9.93 5.47 0 9.93 4.46 9.93 9.93 0 5.48-4.46 9.94-9.94 9.94Zm5.44-7.44c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.24-.46-2.37-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35Z"/></svg></a>
+
+<dialog class="info-modal" id="infoModal" aria-labelledby="infoTitle">
+  <div class="info-modal-card">
+    <button type="button" class="info-close" aria-label="Close">&times;</button>
+    <div class="info-kicker">General Paediatric Surgery</div>
+    <h3 id="infoTitle"></h3>
+    <div class="info-text" id="infoText"></div>
+    <p class="info-note">This is general information only and does not replace a medical consultation. If you are worried about your child, please contact the clinic.</p>
+    <div class="info-actions">
+      <a href="contact.html" class="btn btn--primary">Book Appointment</a>
+      <a href="tel:+6088346616" class="btn btn--ghost">Call Clinic</a>
+    </div>
+  </div>
+</dialog>
 <script src="js/main.js"></script>
+<script>
+(function(){
+  var DATA = {"appendicitis": {"t": "Appendicitis", "p": ["The appendix is a small finger-shaped pouch attached to the large bowel. When it becomes inflamed or blocked, it causes appendicitis.", "Typical signs are tummy pain that starts around the belly button and moves to the lower right side, with loss of appetite, vomiting and fever. Young children may simply seem unwell, unsettled or refuse to walk or jump.", "Appendicitis needs prompt assessment because a delay can lead to the appendix bursting. Treatment is usually an operation to remove the appendix (appendicectomy), often done through keyhole surgery."]}, "inguinal-hernia": {"t": "Inguinal hernia", "p": ["An inguinal hernia is a bulge in the groin (sometimes extending into the scrotum or labia) that appears when a child cries, coughs or strains, and may disappear when relaxed. It happens when a small channel that should close before birth stays open, letting bowel push through.", "It is common in babies and young children, especially premature babies. A hernia does not heal by itself and is repaired with a short operation, usually as a day case, either open or by keyhole.", "Seek urgent care if the bulge becomes hard, painful, discoloured or cannot be gently pushed back, or if your child is vomiting or very unsettled."]}, "undescended-testis": {"t": "Undescended testis & torsion of the testis", "p": ["<strong>Undescended testis:</strong> one or both testes are not in the scrotum. Some move down on their own in the first few months of life. If a testis has not descended by about 6 months, your child should be assessed. Treatment is a small operation (orchidopexy) to place the testis in the scrotum, usually advised in the first year or so of life.", "<strong>Torsion of the testis:</strong> the testis twists and cuts off its own blood supply. It causes sudden, severe pain in the scrotum or lower tummy, with swelling and often vomiting, and can affect boys of any age. This is a surgical emergency: go to the nearest emergency department immediately, as the testis can be lost within a few hours."]}, "lacerations": {"t": "Repair of lacerations", "p": ["A laceration is a cut that is deep, gaping or in a place that needs careful closing. Children often get them from falls, sharp objects or sports.", "The wound is cleaned, checked for depth and for any damage to deeper structures, and then closed with stitches, skin glue or adhesive strips. For young or anxious children, or for larger wounds on the face and hands, the repair may be done under sedation or general anaesthesia so it is painless and neat.", "Until your child is seen, press firmly on the wound with a clean cloth to control bleeding. Repair is best done soon after the injury."]}, "burns": {"t": "Burn injuries", "p": ["Burns in children are most often scalds from hot drinks, water or food. First aid is to cool the burn under cool running water for 20 minutes, remove clothing and jewellery that is not stuck to the skin, and cover loosely with clean cling film or a non-fluffy cloth. Do not use ice, butter, toothpaste or creams.", "Please have your child assessed for any burn larger than the size of their palm, or on the face, hands, feet, genitals or over a joint, or if it blisters or looks deep.", "Treatment ranges from specialised dressings to, for deeper burns, surgery such as skin grafting, with attention to healing and scarring."]}, "hydrocoele": {"t": "Hydrocoele", "p": ["A hydrocoele is a collection of fluid around a testis. It shows as a painless, smooth swelling of the scrotum, often looking bluish or translucent, and is common in newborn boys.", "Many hydrocoeles in babies settle on their own by the age of 12 to 18 months. Surgery is considered if the swelling persists, keeps getting bigger, or is linked to a hernia. A doctor will examine your child to tell the two apart."]}, "tongue-tie": {"t": "Tongue tie", "p": ["Tongue tie (ankyloglossia) is when the band of tissue under the tongue is short or tight and limits how far the tongue can move.", "In some babies it can cause difficulty with latching and breastfeeding; in older children it may affect eating or certain speech sounds. Many children have no problems and need no treatment.", "If it is causing problems, a quick procedure to release the band (frenotomy) can be done. Dr. Muniswaran will assess feeding and movement first and advise whether it is needed."]}, "lumps-bumps": {"t": "Lumps and bumps", "p": ["Lumps and bumps are very common in children, including skin lumps, cysts, enlarged glands (lymph nodes) and swellings on the head, neck, tummy or limbs. Most are harmless.", "A lump should still be examined to find out what it is. Please come in sooner if it is growing, hard, painful, red, or comes with fever, tiredness or weight loss. An ultrasound may be arranged, and some lumps are removed with a small operation."]}};
+  var dlg = document.getElementById('infoModal');
+  if (!dlg) return;
+  var title = document.getElementById('infoTitle'), text = document.getElementById('infoText');
+  function open(key){
+    var d = DATA[key]; if(!d) return;
+    title.textContent = d.t;
+    text.innerHTML = d.p.map(function(x){return '<p>'+x+'</p>';}).join('');
+    if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open','');
+    document.documentElement.style.overflow = 'hidden';
+  }
+  function close(){ if (dlg.close) dlg.close(); else dlg.removeAttribute('open'); }
+  document.querySelectorAll('.os-item').forEach(function(b){ b.addEventListener('click', function(){ open(b.getAttribute('data-info')); }); });
+  dlg.querySelector('.info-close').addEventListener('click', close);
+  dlg.addEventListener('click', function(e){ if (e.target === dlg) close(); });
+  dlg.addEventListener('close', function(){ document.documentElement.style.overflow = ''; });
+})();
+</script>
+
 </body>
 </html>
