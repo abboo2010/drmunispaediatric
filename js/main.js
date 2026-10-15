@@ -2,6 +2,15 @@
 
 var CLINIC_WA = '60106696074';
 
+function callLinks() {
+  var live = window.CMS_CLINIC && window.CMS_CLINIC.phones && window.CMS_CLINIC.phones.length ? window.CMS_CLINIC.phones : null;
+  var list = live || ['088-346616', '088-518 888'];
+  return list.map(function (p) {
+    var d = p.replace(/\D/g, ''); if (d.charAt(0) === '0') d = '60' + d.slice(1);
+    return '<a href="tel:+' + d + '" style="color:inherit;text-decoration:underline">' + p.replace(/[<>&"]/g, '') + '</a>';
+  }).join(' / ');
+}
+
 function showWhatsAppFallback(form) {
   var old = form.parentElement.querySelector('.wa-fallback');
   if (old) old.remove();
@@ -11,14 +20,14 @@ function showWhatsAppFallback(form) {
   if (get('phone')) lines.push('Phone: ' + get('phone'));
   if (get('child_age')) lines.push("Child's age: " + get('child_age'));
   if (get('message')) lines.push('Reason for visit: ' + get('message'));
-  var url = 'https://wa.me/' + CLINIC_WA + '?text=' + encodeURIComponent(lines.join('\n'));
+  var url = 'https://wa.me/' + ((window.CMS_CLINIC && window.CMS_CLINIC.wa) || CLINIC_WA) + '?text=' + encodeURIComponent(lines.join('\n'));
   var box = document.createElement('div');
   box.className = 'wa-fallback';
   box.setAttribute('role', 'alert');
   box.style.cssText = 'margin-top:16px;padding:16px;border-radius:14px;background:#eef6fb;border:1px solid #cfe2f1;text-align:center;font-size:14.5px;line-height:1.5;color:#0c2038';
   box.innerHTML = '<p style="margin:0 0 12px">We could not send your request online just now. Please send it to the clinic on WhatsApp instead \u2014 your details are already filled in.</p>' +
     '<a class="btn btn--primary" style="justify-content:center;width:100%" target="_blank" rel="noopener" href="' + url + '">Send via WhatsApp</a>' +
-    '<p style="margin:12px 0 0;font-size:13px">Or call <a href="tel:+6088346616" style="color:inherit;text-decoration:underline">088-346616</a> / <a href="tel:+60885188888" style="color:inherit;text-decoration:underline">088-518 888</a></p>';
+    '<p style="margin:12px 0 0;font-size:13px">Or call ' + callLinks() + '</p>';
   form.insertAdjacentElement('afterend', box);
 }
 

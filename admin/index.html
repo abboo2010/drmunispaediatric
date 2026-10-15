@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Website Editor | Dr. Muniswaran</title>
+<link rel="icon" type="image/png" href="../img/logo-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0c2038;--blue:#2f6fa8;--blue-dark:#1f4d78;--ink:#1c2530;--slate:#5b6878;--line:#dbe4ec;--bg:#f3f7fb;--ok:#1d7a4d;--bad:#b3261e;--gold:#f5c04a}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg);font-size:15px;line-height:1.5}
+h1,h2,h3{font-family:'Source Serif 4',Georgia,serif;color:var(--navy);margin:0}
+button{font:inherit;cursor:pointer}
+[hidden]{display:none!important}
+
+/* login */
+.login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.login-card{width:100%;max-width:400px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:34px 30px;box-shadow:0 18px 50px rgba(12,32,56,.10);text-align:center}
+.login-card img{width:64px;height:64px;object-fit:contain;margin-bottom:10px}
+.login-card h1{font-size:24px;margin-bottom:4px}
+.login-card p{margin:0 0 22px;color:var(--slate);font-size:14px}
+.field{text-align:left;margin-bottom:14px}
+.field label{display:block;font-weight:600;font-size:13px;margin-bottom:6px;color:var(--navy)}
+.field input{width:100%;font:inherit;padding:11px 13px;border:1.5px solid var(--line);border-radius:10px;background:#f7fafd}
+.field input:focus,textarea:focus,.inp:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(47,111,168,.15);background:#fff}
+.pw{position:relative}.pw button{position:absolute;right:8px;top:50%;transform:translateY(-50%);border:0;background:none;color:var(--slate);font-size:12.5px;font-weight:600;padding:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:11px 22px;font-weight:600;font-size:14.5px;background:var(--blue);color:#fff;transition:.15s}
+.btn:hover{background:var(--blue-dark)}.btn:disabled{opacity:.55;cursor:default}
+.btn--wide{width:100%}
+.btn--ghost{background:#fff;color:var(--navy);border:1.5px solid var(--line)}.btn--ghost:hover{background:var(--bg)}
+.btn--danger{background:#fff;color:var(--bad);border:1.5px solid #f0c7c4}.btn--danger:hover{background:#fdf0ef}
+.btn--sm{padding:7px 14px;font-size:13px}
+.err{color:var(--bad);font-size:13.5px;margin:0 0 12px;min-height:0}
+
+/* app shell */
+.topbar{position:sticky;top:0;z-index:30;background:var(--navy);color:#fff;display:flex;align-items:center;gap:14px;padding:10px 22px}
+.topbar img{width:34px;height:34px;object-fit:contain;background:#fff;border-radius:8px;padding:3px}
+.topbar strong{font-family:'Source Serif 4',serif;font-size:17px;font-weight:600}
+.topbar .sp{flex:1}
+.topbar a,.topbar button{color:#fff;font-size:13.5px;font-weight:500;text-decoration:none;background:rgba(255,255,255,.12);border:0;border-radius:999px;padding:7px 14px}
+.topbar a:hover,.topbar button:hover{background:rgba(255,255,255,.22)}
+.shell{display:grid;grid-template-columns:230px 1fr;gap:26px;max-width:1180px;margin:0 auto;padding:24px 22px 120px}
+.side{position:sticky;top:78px;align-self:start;display:flex;flex-direction:column;gap:4px}
+.side button{text-align:left;border:0;background:none;padding:11px 14px;border-radius:10px;font-weight:500;color:var(--ink);display:flex;justify-content:space-between;align-items:center}
+.side button:hover{background:#e6eef6}
+.side button.on{background:#fff;color:var(--blue-dark);font-weight:700;box-shadow:0 1px 0 var(--line),0 0 0 1px var(--line)}
+.side .dot{width:8px;height:8px;border-radius:50%;background:var(--gold)}
+.main h2{font-size:26px;margin-bottom:4px}
+.main .lead{color:var(--slate);margin:0 0 22px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin-bottom:18px}
+.card h3{font-size:18px;margin-bottom:14px}
+.group-title{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);font-weight:700;margin:26px 0 10px}
+.fld{margin-bottom:16px}
+.fld .lab{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:12.5px;font-weight:600;color:var(--slate);margin-bottom:5px}
+.fld .lab em{font-style:normal;font-weight:500;color:#8a97a6}
+.fld .reset{border:0;background:none;color:var(--blue);font-size:12px;font-weight:600;padding:0}
+.fld.changed .lab{color:var(--blue-dark)}
+.fld.changed textarea,.fld.changed .inp{border-color:#9fc2e0;background:#f4f9fe}
+textarea,.inp{width:100%;font:inherit;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;background:#f7fafd;resize:vertical;display:block}
+textarea{min-height:44px;line-height:1.5}
+.hint{font-size:12.5px;color:var(--slate);margin:4px 0 0}
+.tools{display:flex;gap:6px;margin-bottom:6px}
+.tools button{border:1px solid var(--line);background:#fff;border-radius:6px;font-size:12px;font-weight:700;padding:3px 9px;color:var(--navy)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.switch{display:flex;align-items:center;gap:10px;font-weight:600;margin-bottom:14px}
+.switch input{width:20px;height:20px}
+.hours-row{display:grid;grid-template-columns:150px 1fr 36px;gap:10px;margin-bottom:8px}
+.xbtn{border:1px solid var(--line);background:#fff;border-radius:8px;color:var(--bad);font-weight:700}
+
+/* services editor */
+.svc{border:1px solid var(--line);border-radius:14px;margin-bottom:14px;background:#fff;overflow:hidden}
+.svc>summary{list-style:none;cursor:pointer;padding:16px 20px;display:flex;align-items:center;gap:12px;font-weight:700;color:var(--navy);font-size:16px}
+.svc>summary::-webkit-details-marker{display:none}
+.svc>summary::after{content:"\25BE";margin-left:auto;color:var(--slate)}
+.svc[open]>summary::after{content:"\25B4"}
+.svc>summary small{font-weight:500;color:var(--slate);font-size:13px}
+.svc-body{padding:4px 20px 20px;border-top:1px solid var(--line)}
+.item{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0;background:#fbfdff}
+.item-head{display:flex;gap:8px;align-items:center;margin-bottom:10px}
+.item-head .inp{font-weight:600}
+.mini{border:1px solid var(--line);background:#fff;border-radius:8px;width:34px;height:34px;flex:none;color:var(--navy);font-weight:700}
+.mini:hover{background:var(--bg)}.mini:disabled{opacity:.35;cursor:default}
+.para{display:flex;gap:6px;align-items:flex-start;margin-bottom:8px}
+.para .col{flex:1}
+.item details summary{cursor:pointer;font-weight:600;font-size:13.5px;color:var(--blue-dark);padding:6px 0}
+
+/* save bar + toast */
+.savebar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);padding:12px 22px;display:flex;align-items:center;gap:14px;z-index:40;justify-content:flex-end}
+.savebar .msg{margin-right:auto;font-size:14px;color:var(--slate)}
+.savebar .msg.ok{color:var(--ok);font-weight:600}.savebar .msg.bad{color:var(--bad);font-weight:600}
+.modal{position:fixed;inset:0;background:rgba(12,32,56,.5);display:flex;align-items:center;justify-content:center;z-index:60;padding:20px}
+.modal .box{background:#fff;border-radius:16px;padding:26px;max-width:380px;width:100%}
+.modal h3{margin-bottom:14px}
+@media(max-width:820px){.shell{grid-template-columns:1fr;padding:14px 14px 120px}.side{position:static;flex-direction:row;flex-wrap:wrap}.side button{padding:8px 12px}.row2{grid-template-columns:1fr}.hours-row{grid-template-columns:110px 1fr 36px}}
+</style>
+</head>
+<body>
+
+<!-- ============ LOGIN ============ -->
+<div class="login-wrap" id="login" hidden>
+  <form class="login-card" id="loginForm" autocomplete="on">
+    <img src="../img/logo-mark.png" alt="">
+    <h1>Website Editor</h1>
+    <p>Dr. Muniswaran A/L Nadesin — sign in to edit the website.</p>
+    <div class="field"><label for="em">Email</label><input id="em" type="email" autocomplete="username" required></div>
+    <div class="field"><label for="pw">Password</label><div class="pw"><input id="pw" type="password" autocomplete="current-password" required><button type="button" id="pwShow">Show</button></div></div>
+    <p class="err" id="loginErr"></p>
+    <button class="btn btn--wide" id="loginBtn" type="submit">Sign in</button>
+  </form>
+</div>
+
+<!-- ============ APP ============ -->
+<div id="app" hidden>
+  <div class="topbar">
+    <img src="../img/logo-mark.png" alt="">
+    <strong>Website Editor</strong>
+    <span class="sp"></span>
+    <a href="../index.html" target="_blank" rel="noopener">View website ↗</a>
+    <button id="pwBtn" type="button">Change password</button>
+    <button id="outBtn" type="button">Sign out</button>
+  </div>
+  <div class="shell">
+    <nav class="side" id="side"></nav>
+    <main class="main" id="main"></main>
+  </div>
+  <div class="savebar">
+    <span class="msg" id="msg">No changes yet.</span>
+    <button class="btn btn--ghost" id="discardBtn" type="button" disabled>Discard changes</button>
+    <button class="btn" id="saveBtn" type="button" disabled>Save changes</button>
+  </div>
+</div>
+
+<div class="modal" id="pwModal" hidden>
+  <form class="box" id="pwForm">
+    <h3>Change password</h3>
+    <div class="field"><label for="np">New password (min. 8 characters)</label><input id="np" type="password" minlength="8" autocomplete="new-password" required></div>
+    <p class="err" id="pwErr"></p>
+    <div style="display:flex;gap:10px;justify-content:flex-end"><button class="btn btn--ghost" type="button" id="pwCancel">Cancel</button><button class="btn" type="submit">Update</button></div>
+  </form>
+</div>
+
+<script src="../js/cms-config.js"></script>
+<script>
+(function () {
+  'use strict';
+  var C = window.CMS_CONFIG;
+  var SKEY = 'drmunis_admin_session';
+  var $ = function (id) { return document.getElementById(id); };
+  var S = { session: null, rows: {}, manifest: null, svcDefault: null, def: {}, tab: 'notice', work: {}, dirty: false };
+
+  function el(tag, attrs, kids) {
+    var n = document.createElement(tag);
+    if (attrs) Object.keys(attrs).forEach(function (k) {
+      if (k === 'class') n.className = attrs[k]; else if (k === 'text') n.textContent = attrs[k];
+      else if (k.slice(0, 2) === 'on') n.addEventListener(k.slice(2), attrs[k]); else n.setAttribute(k, attrs[k]);
+    });
+    (kids || []).forEach(function (c) { if (c != null) n.appendChild(typeof c === 'string' ? document.createTextNode(c) : c); });
+    return n;
+  }
+  var squash = function (s) { return String(s == null ? '' : s).replace(/\s+/g, ' ').trim(); };
+  var clone = function (o) { return JSON.parse(JSON.stringify(o)); };
+
+  // ------------------------------------------------------------------ API
+  function saveSession(s) { S.session = s; try { if (s) localStorage.setItem(SKEY, JSON.stringify(s)); else localStorage.removeItem(SKEY); } catch (e) {} }
+  function authReq(path, body, method, token) {
+    return fetch(C.url + path, { method: method || 'POST', headers: { apikey: C.anonKey, 'Content-Type': 'application/json', Authorization: 'Bearer ' + (token || C.anonKey) }, body: body ? JSON.stringify(body) : undefined })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok) throw new Error(j.error_description || j.msg || j.message || ('Error ' + r.status)); return j; }); });
+  }
+  function toSession(j) { return { access_token: j.access_token, refresh_token: j.refresh_token, expires_at: Math.floor(Date.now() / 1000) + (j.expires_in || 3600), email: (j.user && j.user.email) || (S.session && S.session.email) || '' }; }
+  function refresh() {
+    if (!S.session || !S.session.refresh_token) return Promise.reject(new Error('Signed out'));
+    return authReq('/auth/v1/token?grant_type=refresh_token', { refresh_token: S.session.refresh_token }).then(function (j) { saveSession(toSession(j)); });
+  }
+  function ensureFresh() { return (S.session && S.session.expires_at - 60 < Date.now() / 1000) ? refresh() : Promise.resolve(); }
+  function rest(path, opts) {
+    return ensureFresh().then(function () {
+      opts = opts || {};
+      var h = { apikey: C.anonKey, Authorization: 'Bearer ' + (S.session ? S.session.access_token : C.anonKey), 'Content-Type': 'application/json' };
+      Object.keys(opts.headers || {}).forEach(function (k) { h[k] = opts.headers[k]; });
+      return fetch(C.url + '/rest/v1/' + path, { method: opts.method || 'GET', headers: h, body: opts.body ? JSON.stringify(opts.body) : undefined }).then(function (r) {
+        if (r.status === 401 || r.status === 403) throw new Error('Not allowed — please sign in again.');
+        if (!r.ok) return r.text().then(function (t) { throw new Error(t || ('Error ' + r.status)); });
+        return r.status === 204 ? null : r.text().then(function (t) { return t ? JSON.parse(t) : null; });
+      });
+    });
+  }
+
+  // ------------------------------------------------------------------ boot
+  function show(which) { $('login').hidden = which !== 'login'; $('app').hidden = which !== 'app'; }
+  function boot() {
+    try { S.session = JSON.parse(localStorage.getItem(SKEY) || 'null'); } catch (e) { S.session = null; }
+    if (!S.session) return show('login');
+    ensureFresh().then(startApp).catch(function () { saveSession(null); show('login'); });
+  }
+  $('pwShow').onclick = function () { var i = $('pw'); i.type = i.type === 'password' ? 'text' : 'password'; $('pwShow').textContent = i.type === 'password' ? 'Show' : 'Hide'; };
+  $('loginForm').onsubmit = function (e) {
+    e.preventDefault(); $('loginErr').textContent = ''; $('loginBtn').disabled = true; $('loginBtn').textContent = 'Signing in…';
+    authReq('/auth/v1/token?grant_type=password', { email: $('em').value.trim(), password: $('pw').value })
+      .then(function (j) { saveSession(toSession(j)); $('pw').value = ''; return startApp(); })
+      .catch(function (err) { $('loginErr').textContent = /invalid/i.test(err.message) ? 'Incorrect email or password.' : err.message; })
+      .then(function () { $('loginBtn').disabled = false; $('loginBtn').textContent = 'Sign in'; });
+  };
+  $('outBtn').onclick = function () { if (S.dirty && !confirm('You have unsaved changes. Sign out anyway?')) return; saveSession(null); S.dirty = false; show('login'); };
+  $('pwBtn').onclick = function () { $('pwErr').textContent = ''; $('np').value = ''; $('pwModal').hidden = false; };
+  $('pwCancel').onclick = function () { $('pwModal').hidden = true; };
+  $('pwForm').onsubmit = function (e) {
+    e.preventDefault();
+    ensureFresh().then(function () { return authReq('/auth/v1/user', { password: $('np').value }, 'PUT', S.session.access_token); })
+      .then(function () { $('pwModal').hidden = true; flash('Password updated.', 'ok'); })
+      .catch(function (err) { $('pwErr').textContent = err.message; });
+  };
+  window.addEventListener('beforeunload', function (e) { if (S.dirty) { e.preventDefault(); e.returnValue = ''; } });
+
+  // ------------------------------------------------------------------ data load
+  function fetchText(u) { return fetch(u, { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error(u); return r.text(); }); }
+  function readDefaults(html) {
+    var d = new DOMParser().parseFromString(html, 'text/html'), out = {};
+    var tk = d.querySelector('.ticker-item');
+    out.ticker = { enabled: true, text: tk ? squash(tk.innerHTML) : '' };
+    var a = d.querySelector('footer [data-clinic="address"]');
+    var ph = d.querySelector('footer [data-clinic="phones"]');
+    var wa = d.querySelector('footer [data-clinic="whatsapp"]');
+    var parts = ph ? squash(ph.textContent).split('/').map(squash) : [];
+    var hrs = [];
+    d.querySelectorAll('footer [data-clinic="hours-list"] li').forEach(function (li) { var s = li.querySelectorAll('span'); hrs.push({ day: squash(s[0] && s[0].textContent), time: squash(s[1] && s[1].textContent) }); });
+    out.clinic = { phone1: parts[0] || '', phone2: parts[1] || '', whatsapp: wa ? squash(wa.textContent).replace(/^WhatsApp:\s*/i, '') : '', address: a ? squash(a.textContent) : '', hours: hrs };
+    return out;
+  }
+  function startApp() {
+    return Promise.all([
+      fetchText('manifest.json').then(JSON.parse),
+      fetchText('services-default.json').then(JSON.parse),
+      fetchText('../index.html').then(readDefaults),
+      rest('site_content?select=key,value')
+    ]).then(function (r) {
+      S.manifest = r[0]; S.svcDefault = r[1]; S.def = r[2]; S.rows = {};
+      (r[3] || []).forEach(function (row) { S.rows[row.key] = row.value; });
+      show('app'); resetWork(); renderSide(); renderTab();
+    }).catch(function (err) {
+      saveSession(null); show('login'); $('loginErr').textContent = 'Could not load the editor: ' + err.message;
+    });
+  }
+
+  // working copy = what the editor shows; saved rows live in S.rows
+  function resetWork() {
+    S.work = {
+      text: {},
+      ticker: clone(Object.assign({}, S.def.ticker, S.rows.ticker || {})),
+      clinic: clone(Object.assign({}, S.def.clinic, S.rows.clinic || {})),
+      services: clone(S.rows.services || S.svcDefault)
+    };
+    S.work.clinic.hours = S.work.clinic.hours && S.work.clinic.hours.length ? S.work.clinic.hours : clone(S.def.clinic.hours);
+    allFields().forEach(function (f) { S.work.text[f.key] = S.rows[f.key] != null ? S.rows[f.key] : f.default; });
+    setDirty(false);
+  }
+  function allFields() {
+    var out = [];
+    Object.keys(S.manifest.pages).forEach(function (p) { S.manifest.pages[p].fields.forEach(function (f) { out.push(f); }); });
+    S.manifest.shared.nav.concat(S.manifest.shared.footer).forEach(function (f) { out.push(f); });
+    return out;
+  }
+  function setDirty(v) {
+    S.dirty = v; $('saveBtn').disabled = !v; $('discardBtn').disabled = !v;
+    var m = $('msg'); m.className = 'msg'; m.textContent = v ? 'You have unsaved changes.' : 'No changes yet.';
+    renderSide();
+  }
+  function flash(text, kind) { var m = $('msg'); m.className = 'msg ' + (kind || ''); m.textContent = text; }
+
+  // ------------------------------------------------------------------ sidebar / tabs
+  var TABS = [
+    { id: 'notice', label: 'Website notice' }, { id: 'clinic', label: 'Clinic details' },
+    { id: 'index', label: 'Home page' }, { id: 'about', label: 'About page' },
+    { id: 'services', label: 'Services page' }, { id: 'contact', label: 'Contact page' }, { id: 'shared', label: 'Menu & footer' }
+  ];
+  function renderSide() {
+    var side = $('side'); side.innerHTML = '';
+    TABS.forEach(function (t) {
+      side.appendChild(el('button', { class: S.tab === t.id ? 'on' : '', onclick: function () { S.tab = t.id; renderSide(); renderTab(); window.scrollTo(0, 0); } }, [t.label]));
+    });
+  }
+  function renderTab() {
+    var m = $('main'); m.innerHTML = '';
+    ({ notice: tabNotice, clinic: tabClinic, services: tabServices, shared: tabShared }[S.tab] || tabPage)(m);
+  }
+  function head(m, title, lead) { m.appendChild(el('h2', { text: title })); m.appendChild(el('p', { class: 'lead', text: lead })); }
+  function touch() { setDirty(true); }
+
+  // ---- generic text field (works for manifest fields)
+  function boldBar(ta) {
+    return el('div', { class: 'tools' }, [el('button', { type: 'button', title: 'Make the selected text bold', onclick: function () {
+      var s = ta.selectionStart, e = ta.selectionEnd; if (s === e) return;
+      ta.value = ta.value.slice(0, s) + '<strong>' + ta.value.slice(s, e) + '</strong>' + ta.value.slice(e); ta.dispatchEvent(new Event('input'));
+    } }, ['B Bold'])]);
+  }
+  function autosize(ta) { ta.style.height = 'auto'; ta.style.height = Math.min(ta.scrollHeight + 2, 420) + 'px'; }
+  var HL_OPEN = '<span class="hl">';
+  function textField(f) {
+    var wrap = el('div', { class: 'fld' });
+    var hl = f.html && f.default.indexOf(HL_OPEN) > -1; // headline with highlighted words: show them as {{ ... }}
+    var toUI = function (v) { return hl ? String(v).replace(/<span class="hl">([\s\S]*?)<\/span>/g, '{{$1}}') : v; };
+    var fromUI = function (v) { return hl ? String(v).replace(/\{\{([\s\S]*?)\}\}/g, HL_OPEN + '$1</span>') : v; };
+    var ta = el('textarea', { rows: '1' }); ta.value = toUI(S.work.text[f.key]);
+    var reset = el('button', { type: 'button', class: 'reset', text: 'Reset to original', hidden: '' });
+    function refresh() { var ch = squash(ta.value) !== squash(f.default); wrap.classList.toggle('changed', ch); reset.hidden = !ch; }
+    ta.addEventListener('input', function () { S.work.text[f.key] = fromUI(ta.value); autosize(ta); refresh(); touch(); });
+    reset.onclick = function () { ta.value = toUI(f.default); ta.dispatchEvent(new Event('input')); };
+    wrap.appendChild(el('div', { class: 'lab' }, [el('span', { text: f.label }), reset]));
+    if (f.html && !hl) wrap.appendChild(boldBar(ta));
+    wrap.appendChild(ta);
+    if (hl) wrap.appendChild(el('div', { class: 'hint', text: 'Words inside {{ }} are shown in the highlight colour. Keep the double curly brackets around them.' }));
+    else if (f.html) wrap.appendChild(el('div', { class: 'hint', text: 'This text contains formatting or a link — keep any tags like <strong> or <a …> intact.' }));
+    setTimeout(function () { autosize(ta); refresh(); }, 0);
+    return wrap;
+  }
+  function fieldGroups(m, fields) {
+    var cur = null;
+    fields.forEach(function (f) {
+      if (f.group !== cur) { cur = f.group; m.appendChild(el('div', { class: 'group-title', text: cur })); }
+      m.appendChild(textField(f));
+    });
+  }
+  function tabPage(m) {
+    var meta = { index: ['Home page', 'Everything written on the home page.'], about: ['About page', 'Dr. Muniswaran’s biography and credentials.'], contact: ['Contact page', 'Headings and wording on the contact page. Phone, address and hours are under “Clinic details”.'] }[S.tab];
+    head(m, meta[0], meta[1]);
+    var card = el('div'); m.appendChild(card); fieldGroups(card, S.manifest.pages[S.tab].fields);
+  }
+  function tabShared(m) {
+    head(m, 'Menu & footer', 'These appear on every page of the website.');
+    var card = el('div'); m.appendChild(card);
+    fieldGroups(card, S.manifest.shared.nav.concat(S.manifest.shared.footer));
+  }
+
+  // ---- notice (ticker)
+  function tabNotice(m) {
+    head(m, 'Website notice', 'The scrolling banner at the very top of every page. Switch it off once the website is ready.');
+    var card = el('div', { class: 'card' }); m.appendChild(card);
+    var cb = el('input', { type: 'checkbox', id: 'tkOn' }); cb.checked = S.work.ticker.enabled !== false;
+    cb.onchange = function () { S.work.ticker.enabled = cb.checked; ta.disabled = !cb.checked; touch(); };
+    card.appendChild(el('label', { class: 'switch', for: 'tkOn' }, [cb, 'Show the scrolling notice']));
+    var ta = el('textarea', { rows: '3' }); ta.value = S.work.ticker.text; ta.disabled = !cb.checked;
+    ta.oninput = function () { S.work.ticker.text = ta.value; autosize(ta); touch(); };
+    card.appendChild(el('div', { class: 'lab', style: 'font-size:12.5px;font-weight:600;color:var(--slate);margin-bottom:5px', text: 'Notice text' }));
+    card.appendChild(boldBar(ta)); card.appendChild(ta);
+    card.appendChild(el('div', { class: 'hint', text: 'Keep the <a href="tel:…"> link tags if you want the phone numbers to be tappable.' }));
+    setTimeout(function () { autosize(ta); }, 0);
+  }
+
+  // ---- clinic details
+  function inputField(label, obj, key, hint) {
+    var wrap = el('div', { class: 'fld' }), i = el('input', { class: 'inp', type: 'text' }); i.value = obj[key] || '';
+    i.oninput = function () { obj[key] = i.value; touch(); };
+    wrap.appendChild(el('div', { class: 'lab' }, [el('span', { text: label })])); wrap.appendChild(i);
+    if (hint) wrap.appendChild(el('div', { class: 'hint', text: hint }));
+    return wrap;
+  }
+  function tabClinic(m) {
+    head(m, 'Clinic details', 'Phone numbers, WhatsApp, address and opening hours. Changing them here updates the header, footer, Contact page, “Call Clinic” buttons and the WhatsApp button everywhere.');
+    var c = S.work.clinic, card = el('div', { class: 'card' }); m.appendChild(card);
+    var r = el('div', { class: 'row2' }); card.appendChild(r);
+    r.appendChild(inputField('Phone number 1', c, 'phone1', 'The number used when someone taps “Call Clinic”.'));
+    r.appendChild(inputField('Phone number 2 (optional)', c, 'phone2'));
+    card.appendChild(inputField('WhatsApp number', c, 'whatsapp', 'Used for the green WhatsApp button, e.g. 010-669 6074.'));
+    card.appendChild(inputField('Address', c, 'address'));
+    var hc = el('div', { class: 'card' }); m.appendChild(hc);
+    hc.appendChild(el('h3', { text: 'Opening hours' }));
+    var box = el('div'); hc.appendChild(box);
+    function draw() {
+      box.innerHTML = '';
+      c.hours.forEach(function (h, idx) {
+        var d = el('input', { class: 'inp', type: 'text', placeholder: 'e.g. Monday–Friday' }), t = el('input', { class: 'inp', type: 'text', placeholder: 'e.g. 9 A.M.–5 P.M.' });
+        d.value = h.day || ''; t.value = h.time || '';
+        d.oninput = function () { h.day = d.value; touch(); }; t.oninput = function () { h.time = t.value; touch(); };
+        box.appendChild(el('div', { class: 'hours-row' }, [d, t, el('button', { type: 'button', class: 'xbtn', title: 'Remove this row', text: '×', onclick: function () { c.hours.splice(idx, 1); draw(); touch(); } })]));
+      });
+    }
+    draw();
+    hc.appendChild(el('button', { type: 'button', class: 'btn btn--ghost btn--sm', text: '+ Add a row', onclick: function () { c.hours.push({ day: '', time: '' }); draw(); touch(); } }));
+  }
+
+  // ---- services
+  function tabServices(m) {
+    head(m, 'Services page', 'Edit each service, add or remove conditions, and change the information shown when a visitor taps an item.');
+    var model = S.work.services, wrap = el('div'); m.appendChild(wrap);
+    model.sections.forEach(function (sec) { wrap.appendChild(sectionEditor(sec)); });
+    m.appendChild(el('div', { class: 'group-title', text: 'Other wording on the Services page' }));
+    var rest = el('div'); m.appendChild(rest); fieldGroups(rest, S.manifest.pages.services.fields);
+    m.appendChild(el('div', { class: 'group-title', text: 'Reset' }));
+    m.appendChild(el('button', { class: 'btn btn--danger btn--sm', type: 'button', text: 'Reset all services to the original list', onclick: function () {
+      if (!confirm('Replace your edited services with the original list? (You still need to press Save.)')) return;
+      S.work.services = clone(S.svcDefault); touch(); renderTab();
+    } }));
+  }
+  function sectionEditor(sec) {
+    var d = el('details', { class: 'svc' }), sum = el('summary', {}, [sec.title, el('small', { text: sec.items.length + ' items' })]);
+    d.appendChild(sum);
+    var body = el('div', { class: 'svc-body' }); d.appendChild(body);
+    var r = el('div', { class: 'row2', style: 'margin-top:16px' }); body.appendChild(r);
+    r.appendChild(inputField('Service name', sec, 'title'));
+    r.appendChild(inputField('Short line under the name', sec, 'subtitle'));
+    var list = el('div'); body.appendChild(list);
+    function draw() {
+      list.innerHTML = ''; sum.firstChild.textContent = sec.title; sum.querySelector('small').textContent = sec.items.length + ' items';
+      sec.items.forEach(function (it, idx) { list.appendChild(itemEditor(sec, it, idx, draw)); });
+    }
+    draw();
+    body.appendChild(el('button', { type: 'button', class: 'btn btn--ghost btn--sm', text: '+ Add a new item', onclick: function () {
+      var n = { key: 'n-' + Date.now().toString(36), title: 'New item', popupTitle: 'New item', paragraphs: [''] };
+      if (sec.detail) n.desc = '';
+      sec.items.push(n); touch(); draw(); var last = list.lastChild; if (last) { last.querySelector('.inp').focus(); last.querySelector('.inp').select(); }
+    } }));
+    return d;
+  }
+  function itemEditor(sec, it, idx, redraw) {
+    var box = el('div', { class: 'item' });
+    var name = el('input', { class: 'inp', type: 'text' }); name.value = it.title;
+    name.oninput = function () { var same = it.popupTitle === it.title; it.title = name.value; if (same) { it.popupTitle = name.value; pt.value = name.value; } touch(); };
+    var up = el('button', { type: 'button', class: 'mini', title: 'Move up', text: '↑', onclick: function () { sec.items.splice(idx - 1, 0, sec.items.splice(idx, 1)[0]); touch(); redraw(); } });
+    var dn = el('button', { type: 'button', class: 'mini', title: 'Move down', text: '↓', onclick: function () { sec.items.splice(idx + 1, 0, sec.items.splice(idx, 1)[0]); touch(); redraw(); } });
+    var rm = el('button', { type: 'button', class: 'mini', style: 'color:var(--bad)', title: 'Remove this item', text: '×', onclick: function () {
+      if (!confirm('Remove “' + it.title + '” from the list?')) return; sec.items.splice(idx, 1); touch(); redraw();
+    } });
+    up.disabled = idx === 0; dn.disabled = idx === sec.items.length - 1;
+    box.appendChild(el('div', { class: 'item-head' }, [name, up, dn, rm]));
+    if (sec.detail) {
+      var ds = el('textarea', { rows: '2' }); ds.value = it.desc || ''; ds.oninput = function () { it.desc = ds.value; autosize(ds); touch(); };
+      box.appendChild(el('div', { class: 'fld' }, [el('div', { class: 'lab' }, [el('span', { text: 'Short description shown under the name' })]), ds])); setTimeout(function () { autosize(ds); }, 0);
+    }
+    var det = el('details'); det.appendChild(el('summary', { text: 'Pop-up information (what visitors see when they tap this item)' }));
+    var pt = el('input', { class: 'inp', type: 'text' }); pt.value = it.popupTitle || it.title; pt.oninput = function () { it.popupTitle = pt.value; touch(); };
+    det.appendChild(el('div', { class: 'fld', style: 'margin-top:8px' }, [el('div', { class: 'lab' }, [el('span', { text: 'Pop-up title' })]), pt]));
+    var plist = el('div'); det.appendChild(plist);
+    function drawP() {
+      plist.innerHTML = '';
+      (it.paragraphs = it.paragraphs || []).forEach(function (p, pi) {
+        var ta = el('textarea', { rows: '3' }); ta.value = p;
+        ta.oninput = function () { it.paragraphs[pi] = ta.value; autosize(ta); touch(); };
+        var x = el('button', { type: 'button', class: 'mini', style: 'color:var(--bad);margin-top:30px', title: 'Remove this paragraph', text: '×', onclick: function () { it.paragraphs.splice(pi, 1); touch(); drawP(); } });
+        plist.appendChild(el('div', { class: 'para' }, [el('div', { class: 'col' }, [el('div', { class: 'lab', style: 'font-size:12.5px;font-weight:600;color:var(--slate);margin-bottom:5px', text: 'Paragraph ' + (pi + 1) }), boldBar(ta), ta]), x]));
+        setTimeout(function () { autosize(ta); }, 0);
+      });
+    }
+    drawP();
+    det.appendChild(el('button', { type: 'button', class: 'btn btn--ghost btn--sm', text: '+ Add paragraph', onclick: function () { it.paragraphs.push(''); touch(); drawP(); } }));
+    box.appendChild(det);
+    return box;
+  }
+
+  // ------------------------------------------------------------------ save / discard
+  function same(a, b) { return JSON.stringify(a) === JSON.stringify(b); }
+  function cleanModel(model) {
+    var c = clone(model);
+    c.sections.forEach(function (s) { s.items.forEach(function (i) { i.paragraphs = (i.paragraphs || []).filter(function (p) { return squash(p); }); }); });
+    return c;
+  }
+  $('discardBtn').onclick = function () { if (confirm('Throw away all unsaved changes?')) { resetWork(); renderTab(); } };
+  $('saveBtn').onclick = function () {
+    var up = [], del = [], btn = $('saveBtn');
+    allFields().forEach(function (f) {
+      var v = S.work.text[f.key], changed = squash(v) !== squash(f.default);
+      if (changed) { if (!same(S.rows[f.key], v)) up.push({ key: f.key, value: v }); } else if (S.rows[f.key] != null) del.push(f.key);
+    });
+    function special(key, val, def) { if (same(val, def)) { if (S.rows[key] != null) del.push(key); } else if (!same(S.rows[key], val)) up.push({ key: key, value: val }); }
+    var tk = clone(S.work.ticker); special('ticker', tk, S.def.ticker);
+    var cl = clone(S.work.clinic); cl.hours = cl.hours.filter(function (h) { return squash(h.day) || squash(h.time); }); special('clinic', cl, S.def.clinic);
+    special('services', cleanModel(S.work.services), S.svcDefault);
+    if (!up.length && !del.length) { setDirty(false); flash('Nothing to save.', ''); return; }
+    btn.disabled = true; flash('Saving…', '');
+    var jobs = [];
+    if (up.length) jobs.push(rest('site_content?on_conflict=key', { method: 'POST', headers: { Prefer: 'resolution=merge-duplicates,return=minimal' }, body: up }));
+    if (del.length) jobs.push(rest('site_content?key=in.(' + del.map(function (k) { return '"' + k + '"'; }).join(',') + ')', { method: 'DELETE', headers: { Prefer: 'return=minimal' } }));
+    Promise.all(jobs).then(function () {
+      up.forEach(function (r) { S.rows[r.key] = r.value; }); del.forEach(function (k) { delete S.rows[k]; });
+      try { localStorage.removeItem('cms_cache_v1'); } catch (e) {}
+      resetWork(); renderTab(); flash('Saved ✓  Your changes are live on the website now.', 'ok'); $('saveBtn').disabled = true;
+    }).catch(function (err) { btn.disabled = false; flash('Could not save: ' + err.message, 'bad'); });
+  };
+
+  boot();
+})();
+</script>
+</body>
+</html>

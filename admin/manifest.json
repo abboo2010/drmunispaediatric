@@ -1,0 +1,1085 @@
+{
+ "generated": "2026-10-15T16:33:59.650Z",
+ "shared": {
+  "nav": [
+   {
+    "key": "nav.01",
+    "group": "Top menu & logo",
+    "label": "Text",
+    "html": false,
+    "default": "Dr. Muniswaran A/L Nadesin"
+   },
+   {
+    "key": "nav.02",
+    "group": "Top menu & logo",
+    "label": "Text",
+    "html": false,
+    "default": "Consultant Paediatric Surgeon"
+   },
+   {
+    "key": "nav.03",
+    "group": "Top menu & logo",
+    "label": "Button / link",
+    "html": false,
+    "default": "Home"
+   },
+   {
+    "key": "nav.04",
+    "group": "Top menu & logo",
+    "label": "Button / link",
+    "html": false,
+    "default": "About Dr. Muniswaran"
+   },
+   {
+    "key": "nav.05",
+    "group": "Top menu & logo",
+    "label": "Button / link",
+    "html": false,
+    "default": "Our Services"
+   },
+   {
+    "key": "nav.06",
+    "group": "Top menu & logo",
+    "label": "Button / link",
+    "html": false,
+    "default": "Contact"
+   },
+   {
+    "key": "nav.07",
+    "group": "Top menu & logo",
+    "label": "Button / link",
+    "html": false,
+    "default": "Book Appointment"
+   }
+  ],
+  "footer": [
+   {
+    "key": "footer.01",
+    "group": "Footer",
+    "label": "Text",
+    "html": false,
+    "default": "Dr. Muniswaran A/L Nadesin"
+   },
+   {
+    "key": "footer.02",
+    "group": "Footer",
+    "label": "Text",
+    "html": false,
+    "default": "Consultant Paediatric Surgeon"
+   },
+   {
+    "key": "footer.03",
+    "group": "Footer",
+    "label": "Paragraph",
+    "html": false,
+    "default": "M.D. (USM), M.Med. Paediatric Surgery (UKM) — dedicated to gentle, minimally invasive surgical care for infants, children and adolescents."
+   },
+   {
+    "key": "footer.04",
+    "group": "Footer",
+    "label": "Heading",
+    "html": false,
+    "default": "Explore"
+   },
+   {
+    "key": "footer.05",
+    "group": "Footer",
+    "label": "Button / link",
+    "html": false,
+    "default": "About Dr. Muniswaran"
+   },
+   {
+    "key": "footer.06",
+    "group": "Footer",
+    "label": "Button / link",
+    "html": false,
+    "default": "Our Services"
+   },
+   {
+    "key": "footer.07",
+    "group": "Footer",
+    "label": "Button / link",
+    "html": false,
+    "default": "Contact"
+   },
+   {
+    "key": "footer.08",
+    "group": "Footer",
+    "label": "Heading",
+    "html": false,
+    "default": "Open Hours"
+   },
+   {
+    "key": "footer.09",
+    "group": "Footer",
+    "label": "Heading",
+    "html": false,
+    "default": "Contact"
+   },
+   {
+    "key": "footer.10",
+    "group": "Footer",
+    "label": "Text",
+    "html": false,
+    "default": "© 2026 Dr. Muniswaran A/L Nadesin. All rights reserved."
+   }
+  ],
+  "ticker": true
+ },
+ "pages": {
+  "index": {
+   "fields": [
+    {
+     "key": "index.__title",
+     "group": "Browser tab & Google",
+     "label": "Page title (browser tab)",
+     "html": false,
+     "default": "Dr. Muniswaran A/L Nadesin | Consultant Paediatric Surgeon"
+    },
+    {
+     "key": "index.__desc",
+     "group": "Browser tab & Google",
+     "label": "Description (shown by Google)",
+     "html": false,
+     "default": "Dr. Muniswaran A/L Nadesin, Consultant Paediatric Surgeon — gentle, minimally invasive surgical care for infants, children and adolescents."
+    },
+    {
+     "key": "index.01",
+     "group": "Hero — Gentle surgical care, built around your child.",
+     "label": "Small heading",
+     "html": false,
+     "default": "Consultant Paediatric Surgeon"
+    },
+    {
+     "key": "index.02",
+     "group": "Hero — Gentle surgical care, built around your child.",
+     "label": "Heading",
+     "html": true,
+     "default": "Gentle surgical care, <span class=\"hl\">built around your child.</span>"
+    },
+    {
+     "key": "index.03",
+     "group": "Hero — Gentle surgical care, built around your child.",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Dr. Muniswaran A/L Nadesin provides specialised paediatric surgical care with a strong focus on minimally invasive (laparoscopic) techniques — designed to reduce pain, minimise trauma, and help children recover faster."
+    },
+    {
+     "key": "index.04",
+     "group": "Hero — Gentle surgical care, built around your child.",
+     "label": "Button / link",
+     "html": false,
+     "default": "Book an Appointment"
+    },
+    {
+     "key": "index.05",
+     "group": "Hero — Gentle surgical care, built around your child.",
+     "label": "Button / link",
+     "html": false,
+     "default": "View Services"
+    },
+    {
+     "key": "index.06",
+     "group": "Hero — Gentle surgical care, built around your child.",
+     "label": "Text",
+     "html": false,
+     "default": "MMC Registered Paediatric Surgery Specialist · Gleneagles Kota Kinabalu"
+    },
+    {
+     "key": "index.07",
+     "group": "Hero — Gentle surgical care, built around your child.",
+     "label": "Text",
+     "html": false,
+     "default": "01"
+    },
+    {
+     "key": "index.08",
+     "group": "Hero — Gentle surgical care, built around your child.",
+     "label": "Heading",
+     "html": false,
+     "default": "Book a Consultation"
+    },
+    {
+     "key": "index.09",
+     "group": "Hero — Gentle surgical care, built around your child.",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Meet Dr. Muniswaran to discuss your child's condition and the best path forward."
+    },
+    {
+     "key": "index.10",
+     "group": "Hero — Gentle surgical care, built around your child.",
+     "label": "Text",
+     "html": false,
+     "default": "Book now"
+    },
+    {
+     "key": "index.11",
+     "group": "Hero — Gentle surgical care, built around your child.",
+     "label": "Text",
+     "html": false,
+     "default": "02"
+    },
+    {
+     "key": "index.12",
+     "group": "Hero — Gentle surgical care, built around your child.",
+     "label": "Heading",
+     "html": false,
+     "default": "Minimally Invasive Care"
+    },
+    {
+     "key": "index.13",
+     "group": "Hero — Gentle surgical care, built around your child.",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Keyhole techniques used wherever appropriate, for less pain and faster recovery."
+    },
+    {
+     "key": "index.14",
+     "group": "Hero — Gentle surgical care, built around your child.",
+     "label": "Text",
+     "html": false,
+     "default": "See keyhole services"
+    },
+    {
+     "key": "index.15",
+     "group": "Hero — Gentle surgical care, built around your child.",
+     "label": "Text",
+     "html": false,
+     "default": "03"
+    },
+    {
+     "key": "index.16",
+     "group": "Hero — Gentle surgical care, built around your child.",
+     "label": "Heading",
+     "html": false,
+     "default": "Family-Centred Support"
+    },
+    {
+     "key": "index.17",
+     "group": "Hero — Gentle surgical care, built around your child.",
+     "label": "Paragraph",
+     "html": false,
+     "default": "A calm, gentle approach that keeps parents informed and children at ease."
+    },
+    {
+     "key": "index.18",
+     "group": "Hero — Gentle surgical care, built around your child.",
+     "label": "Text",
+     "html": false,
+     "default": "Meet Dr. Muniswaran"
+    },
+    {
+     "key": "index.19",
+     "group": "A specialist approach, built on gentleness",
+     "label": "Small heading",
+     "html": false,
+     "default": "About Dr. Muniswaran"
+    },
+    {
+     "key": "index.20",
+     "group": "A specialist approach, built on gentleness",
+     "label": "Heading",
+     "html": false,
+     "default": "A specialist approach, built on gentleness"
+    },
+    {
+     "key": "index.21",
+     "group": "A specialist approach, built on gentleness",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Dr. Muniswaran A/L Nadesin is a Consultant Paediatric Surgeon based in Kota Kinabalu, Sabah, dedicated to compassionate, minimally invasive surgical care for infants, children and adolescents."
+    },
+    {
+     "key": "index.22",
+     "group": "A specialist approach, built on gentleness",
+     "label": "Heading",
+     "html": false,
+     "default": "MMC Registered Specialist"
+    },
+    {
+     "key": "index.23",
+     "group": "A specialist approach, built on gentleness",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Fully registered with the Malaysian Medical Council as a Paediatric Surgery specialist."
+    },
+    {
+     "key": "index.24",
+     "group": "A specialist approach, built on gentleness",
+     "label": "Heading",
+     "html": false,
+     "default": "Gleneagles KK Privileges"
+    },
+    {
+     "key": "index.25",
+     "group": "A specialist approach, built on gentleness",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Hospital-backed surgical facilities when a procedure calls for it."
+    },
+    {
+     "key": "index.26",
+     "group": "A specialist approach, built on gentleness",
+     "label": "Heading",
+     "html": false,
+     "default": "Active in the field"
+    },
+    {
+     "key": "index.27",
+     "group": "A specialist approach, built on gentleness",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Speaker at the MAPS Child Health Symposium on minimally invasive paediatric surgery."
+    },
+    {
+     "key": "index.28",
+     "group": "A specialist approach, built on gentleness",
+     "label": "Button / link",
+     "html": false,
+     "default": "Read Full Bio"
+    },
+    {
+     "key": "index.29",
+     "group": "Appointment — Get Your Appointment",
+     "label": "Heading",
+     "html": false,
+     "default": "Get Your Appointment"
+    },
+    {
+     "key": "index.30",
+     "group": "Appointment — Get Your Appointment",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Book a consultation online at a time that works for your family."
+    },
+    {
+     "key": "index.31",
+     "group": "Div",
+     "label": "Heading",
+     "html": false,
+     "default": "Thank you!"
+    },
+    {
+     "key": "index.32",
+     "group": "Div",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Your appointment request has been received. Our clinic team will contact you shortly to confirm a time."
+    },
+    {
+     "key": "index.33",
+     "group": "Div",
+     "label": "Button / link",
+     "html": false,
+     "default": "Submit Another Request"
+    },
+    {
+     "key": "index.34",
+     "group": "Appointment — Get Your Appointment",
+     "label": "Quote",
+     "html": false,
+     "default": "“A calm, gentle approach that keeps parents informed and children at ease at every step.”"
+    },
+    {
+     "key": "index.35",
+     "group": "Appointment — Get Your Appointment",
+     "label": "Quote author",
+     "html": false,
+     "default": "Dr. Muniswaran A/L Nadesin"
+    },
+    {
+     "key": "index.36",
+     "group": "Services overview — Services That We Provide",
+     "label": "Small heading",
+     "html": false,
+     "default": "Our Services"
+    },
+    {
+     "key": "index.37",
+     "group": "Services overview — Services That We Provide",
+     "label": "Heading",
+     "html": false,
+     "default": "Services That We Provide"
+    },
+    {
+     "key": "index.38",
+     "group": "Services overview — Services That We Provide",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Five areas of paediatric surgical care, from newborn surgery to keyhole procedures, for every stage of childhood."
+    },
+    {
+     "key": "index.39",
+     "group": "Services overview — Services That We Provide",
+     "label": "Heading",
+     "html": false,
+     "default": "General Paediatric Surgery"
+    },
+    {
+     "key": "index.40",
+     "group": "Services overview — Services That We Provide",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Everyday surgical care for children, from appendicitis and hernias to burns and tongue tie."
+    },
+    {
+     "key": "index.41",
+     "group": "Services overview — Services That We Provide",
+     "label": "List item",
+     "html": false,
+     "default": "Appendicitis"
+    },
+    {
+     "key": "index.42",
+     "group": "Services overview — Services That We Provide",
+     "label": "List item",
+     "html": false,
+     "default": "Inguinal hernia"
+    },
+    {
+     "key": "index.43",
+     "group": "Services overview — Services That We Provide",
+     "label": "List item",
+     "html": false,
+     "default": "Tongue tie"
+    },
+    {
+     "key": "index.44",
+     "group": "Services overview — Services That We Provide",
+     "label": "Text",
+     "html": false,
+     "default": "Explore"
+    },
+    {
+     "key": "index.45",
+     "group": "Services overview — Services That We Provide",
+     "label": "Heading",
+     "html": false,
+     "default": "Neonatal Surgery"
+    },
+    {
+     "key": "index.46",
+     "group": "Services overview — Services That We Provide",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Specialist surgery for newborns with conditions they are born with."
+    },
+    {
+     "key": "index.47",
+     "group": "Services overview — Services That We Provide",
+     "label": "List item",
+     "html": false,
+     "default": "Pyloric stenosis"
+    },
+    {
+     "key": "index.48",
+     "group": "Services overview — Services That We Provide",
+     "label": "List item",
+     "html": false,
+     "default": "Hirschsprung's disease"
+    },
+    {
+     "key": "index.49",
+     "group": "Services overview — Services That We Provide",
+     "label": "List item",
+     "html": false,
+     "default": "Anorectal malformation"
+    },
+    {
+     "key": "index.50",
+     "group": "Services overview — Services That We Provide",
+     "label": "Text",
+     "html": false,
+     "default": "Explore"
+    },
+    {
+     "key": "index.51",
+     "group": "Services overview — Services That We Provide",
+     "label": "Heading",
+     "html": false,
+     "default": "Paediatric Urology"
+    },
+    {
+     "key": "index.52",
+     "group": "Services overview — Services That We Provide",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Expert care for the kidneys, bladder and genital conditions in children."
+    },
+    {
+     "key": "index.53",
+     "group": "Services overview — Services That We Provide",
+     "label": "List item",
+     "html": false,
+     "default": "Hypospadias"
+    },
+    {
+     "key": "index.54",
+     "group": "Services overview — Services That We Provide",
+     "label": "List item",
+     "html": false,
+     "default": "Hydronephrosis"
+    },
+    {
+     "key": "index.55",
+     "group": "Services overview — Services That We Provide",
+     "label": "List item",
+     "html": false,
+     "default": "Phimosis"
+    },
+    {
+     "key": "index.56",
+     "group": "Services overview — Services That We Provide",
+     "label": "Text",
+     "html": false,
+     "default": "Explore"
+    },
+    {
+     "key": "index.57",
+     "group": "Services overview — Services That We Provide",
+     "label": "Heading",
+     "html": false,
+     "default": "Paediatric Laparoscopy"
+    },
+    {
+     "key": "index.58",
+     "group": "Services overview — Services That We Provide",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Keyhole surgery through tiny incisions for less pain and a faster recovery."
+    },
+    {
+     "key": "index.59",
+     "group": "Services overview — Services That We Provide",
+     "label": "List item",
+     "html": false,
+     "default": "Appendicectomy"
+    },
+    {
+     "key": "index.60",
+     "group": "Services overview — Services That We Provide",
+     "label": "List item",
+     "html": false,
+     "default": "Hernia repair"
+    },
+    {
+     "key": "index.61",
+     "group": "Services overview — Services That We Provide",
+     "label": "List item",
+     "html": false,
+     "default": "Orchidopexy"
+    },
+    {
+     "key": "index.62",
+     "group": "Services overview — Services That We Provide",
+     "label": "Text",
+     "html": false,
+     "default": "Explore"
+    },
+    {
+     "key": "index.63",
+     "group": "Services overview — Services That We Provide",
+     "label": "Heading",
+     "html": false,
+     "default": "Paediatric Gynaecological Surgery"
+    },
+    {
+     "key": "index.64",
+     "group": "Services overview — Services That We Provide",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Gentle surgical care for girls, from ovarian conditions to congenital anomalies."
+    },
+    {
+     "key": "index.65",
+     "group": "Services overview — Services That We Provide",
+     "label": "List item",
+     "html": false,
+     "default": "Ovarian pathology"
+    },
+    {
+     "key": "index.66",
+     "group": "Services overview — Services That We Provide",
+     "label": "List item",
+     "html": false,
+     "default": "Labial adhesions"
+    },
+    {
+     "key": "index.67",
+     "group": "Services overview — Services That We Provide",
+     "label": "List item",
+     "html": false,
+     "default": "Congenital anomalies"
+    },
+    {
+     "key": "index.68",
+     "group": "Services overview — Services That We Provide",
+     "label": "Text",
+     "html": false,
+     "default": "Explore"
+    },
+    {
+     "key": "index.69",
+     "group": "Services overview — Services That We Provide",
+     "label": "Button / link",
+     "html": false,
+     "default": "View All Services"
+    },
+    {
+     "key": "index.70",
+     "group": "Call-to-action banner — Have concerns about your child's health?",
+     "label": "Heading",
+     "html": false,
+     "default": "Have concerns about your child's health?"
+    },
+    {
+     "key": "index.71",
+     "group": "Call-to-action banner — Have concerns about your child's health?",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Book a consultation with Dr. Muniswaran today."
+    },
+    {
+     "key": "index.72",
+     "group": "Call-to-action banner — Have concerns about your child's health?",
+     "label": "Button / link",
+     "html": false,
+     "default": "Book Appointment"
+    },
+    {
+     "key": "index.73",
+     "group": "Call-to-action banner — Have concerns about your child's health?",
+     "label": "Button / link",
+     "html": false,
+     "default": "Call Clinic"
+    }
+   ]
+  },
+  "about": {
+   "fields": [
+    {
+     "key": "about.__title",
+     "group": "Browser tab & Google",
+     "label": "Page title (browser tab)",
+     "html": false,
+     "default": "About Dr. Muniswaran A/L Nadesin | Consultant Paediatric Surgeon"
+    },
+    {
+     "key": "about.__desc",
+     "group": "Browser tab & Google",
+     "label": "Description (shown by Google)",
+     "html": false,
+     "default": "Learn about Dr. Muniswaran A/L Nadesin's qualifications, clinical focus and approach to paediatric surgical care."
+    },
+    {
+     "key": "about.01",
+     "group": "Page heading — A specialist approach, built on gentleness",
+     "label": "Small heading",
+     "html": false,
+     "default": "About Dr. Muniswaran"
+    },
+    {
+     "key": "about.02",
+     "group": "Page heading — A specialist approach, built on gentleness",
+     "label": "Heading",
+     "html": false,
+     "default": "A specialist approach, built on gentleness"
+    },
+    {
+     "key": "about.03",
+     "group": "Page heading — A specialist approach, built on gentleness",
+     "label": "Paragraph",
+     "html": false,
+     "default": "M.D. (USM), M.Med. Paediatric Surgery (UKM) — dedicated to compassionate, minimally invasive surgical care for infants, children and adolescents."
+    },
+    {
+     "key": "about.04",
+     "group": "Section",
+     "label": "Text",
+     "html": false,
+     "default": "Dr. Muniswaran A/L Nadesin"
+    },
+    {
+     "key": "about.05",
+     "group": "Section",
+     "label": "Text",
+     "html": false,
+     "default": "Consultant Paediatric Surgeon"
+    },
+    {
+     "key": "about.06",
+     "group": "Section",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Dr. Muniswaran A/L Nadesin is a Consultant Paediatric Surgeon based in Kota Kinabalu, Sabah. He holds an M.D. from Universiti Sains Malaysia (USM) and a Master of Medicine (M.Med.) in Paediatric Surgery from Universiti Kebangsaan Malaysia (UKM), and is a registered Paediatric Surgery specialist with the Malaysian Medical Council."
+    },
+    {
+     "key": "about.07",
+     "group": "Section",
+     "label": "Paragraph",
+     "html": false,
+     "default": "His practice places a strong emphasis on minimally invasive (laparoscopic) techniques — an approach chosen to reduce pain, minimise surgical trauma, and help children return to their normal lives faster. Dr. Muniswaran treats a broad range of surgical conditions across infancy, childhood and adolescence, and holds surgical privileges at Gleneagles Hospital Kota Kinabalu for procedures that require hospital-based facilities."
+    },
+    {
+     "key": "about.08",
+     "group": "Section",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Beyond clinical practice, he is an active contributor to Malaysia's paediatric surgery community, having spoken at the MAPS (Malaysian Association of Paediatric Surgery) Child Health Symposium on minimally invasive paediatric surgery."
+    },
+    {
+     "key": "about.09",
+     "group": "Training and credentials",
+     "label": "Small heading",
+     "html": false,
+     "default": "Qualifications & Milestones"
+    },
+    {
+     "key": "about.10",
+     "group": "Training and credentials",
+     "label": "Heading",
+     "html": false,
+     "default": "Training and credentials"
+    },
+    {
+     "key": "about.11",
+     "group": "Training and credentials",
+     "label": "Heading",
+     "html": false,
+     "default": "M.D. — Universiti Sains Malaysia (USM)"
+    },
+    {
+     "key": "about.12",
+     "group": "Training and credentials",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Foundational medical degree."
+    },
+    {
+     "key": "about.13",
+     "group": "Training and credentials",
+     "label": "Heading",
+     "html": false,
+     "default": "M.Med. Paediatric Surgery — Universiti Kebangsaan Malaysia (UKM)"
+    },
+    {
+     "key": "about.14",
+     "group": "Training and credentials",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Specialist postgraduate training in paediatric surgery."
+    },
+    {
+     "key": "about.15",
+     "group": "Training and credentials",
+     "label": "Heading",
+     "html": false,
+     "default": "Registered Paediatric Surgery Specialist"
+    },
+    {
+     "key": "about.16",
+     "group": "Training and credentials",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Malaysian Medical Council (MMC) specialist register."
+    },
+    {
+     "key": "about.17",
+     "group": "Training and credentials",
+     "label": "Heading",
+     "html": false,
+     "default": "Consultant Paediatric Surgeon, Gleneagles Hospital Kota Kinabalu"
+    },
+    {
+     "key": "about.18",
+     "group": "Training and credentials",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Hospital-backed surgical privileges alongside his own clinic practice."
+    },
+    {
+     "key": "about.19",
+     "group": "Training and credentials",
+     "label": "Heading",
+     "html": false,
+     "default": "Speaker, MAPS Child Health Symposium"
+    },
+    {
+     "key": "about.20",
+     "group": "Training and credentials",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Presented on minimally invasive paediatric surgery to healthcare professionals across Sabah."
+    },
+    {
+     "key": "about.21",
+     "group": "Call-to-action banner — Ready to discuss your child's care?",
+     "label": "Heading",
+     "html": false,
+     "default": "Ready to discuss your child's care?"
+    },
+    {
+     "key": "about.22",
+     "group": "Call-to-action banner — Ready to discuss your child's care?",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Get in touch to book a consultation with Dr. Muniswaran."
+    },
+    {
+     "key": "about.23",
+     "group": "Call-to-action banner — Ready to discuss your child's care?",
+     "label": "Button / link",
+     "html": false,
+     "default": "Book Appointment"
+    },
+    {
+     "key": "about.24",
+     "group": "Call-to-action banner — Ready to discuss your child's care?",
+     "label": "Button / link",
+     "html": false,
+     "default": "View Services"
+    }
+   ]
+  },
+  "services": {
+   "fields": [
+    {
+     "key": "services.__title",
+     "group": "Browser tab & Google",
+     "label": "Page title (browser tab)",
+     "html": false,
+     "default": "Our Services | Consultant Paediatric Surgeon"
+    },
+    {
+     "key": "services.__desc",
+     "group": "Browser tab & Google",
+     "label": "Description (shown by Google)",
+     "html": false,
+     "default": "Our services: general paediatric surgery, neonatal surgery, paediatric urology, paediatric laparoscopy and paediatric gynaecological surgery by Dr. Muniswaran A/L Nadesin."
+    },
+    {
+     "key": "services.01",
+     "group": "Page heading — Our Services",
+     "label": "Small heading",
+     "html": false,
+     "default": "Our Services"
+    },
+    {
+     "key": "services.02",
+     "group": "Page heading — Our Services",
+     "label": "Heading",
+     "html": false,
+     "default": "Our Services"
+    },
+    {
+     "key": "services.03",
+     "group": "Page heading — Our Services",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Surgical care for every stage of childhood, from common day-case procedures to newborn and specialist surgery."
+    },
+    {
+     "key": "services.04",
+     "group": "Page heading — Our Services",
+     "label": "Text",
+     "html": false,
+     "default": "General"
+    },
+    {
+     "key": "services.05",
+     "group": "Page heading — Our Services",
+     "label": "Text",
+     "html": false,
+     "default": "Neonatal"
+    },
+    {
+     "key": "services.06",
+     "group": "Page heading — Our Services",
+     "label": "Text",
+     "html": false,
+     "default": "Urology"
+    },
+    {
+     "key": "services.07",
+     "group": "Page heading — Our Services",
+     "label": "Text",
+     "html": false,
+     "default": "Laparoscopy"
+    },
+    {
+     "key": "services.08",
+     "group": "Page heading — Our Services",
+     "label": "Text",
+     "html": false,
+     "default": "Gynaecological"
+    },
+    {
+     "key": "services.09",
+     "group": "Call-to-action banner — Not sure which service fits?",
+     "label": "Heading",
+     "html": false,
+     "default": "Not sure which service fits?"
+    },
+    {
+     "key": "services.10",
+     "group": "Call-to-action banner — Not sure which service fits?",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Reach out and describe your child's condition — Dr. Muniswaran's team can advise on next steps."
+    },
+    {
+     "key": "services.11",
+     "group": "Call-to-action banner — Not sure which service fits?",
+     "label": "Button / link",
+     "html": false,
+     "default": "Book Appointment"
+    },
+    {
+     "key": "services.12",
+     "group": "Call-to-action banner — Not sure which service fits?",
+     "label": "Button / link",
+     "html": false,
+     "default": "Call Clinic"
+    },
+    {
+     "key": "services.13",
+     "group": "Service pop-up (fixed wording)",
+     "label": "Paragraph",
+     "html": false,
+     "default": "This is general information only and does not replace a medical consultation. If you are worried about your child, please contact the clinic."
+    },
+    {
+     "key": "services.14",
+     "group": "Service pop-up (fixed wording)",
+     "label": "Button / link",
+     "html": false,
+     "default": "Book Appointment"
+    },
+    {
+     "key": "services.15",
+     "group": "Service pop-up (fixed wording)",
+     "label": "Button / link",
+     "html": false,
+     "default": "Call Clinic"
+    }
+   ]
+  },
+  "contact": {
+   "fields": [
+    {
+     "key": "contact.__title",
+     "group": "Browser tab & Google",
+     "label": "Page title (browser tab)",
+     "html": false,
+     "default": "Contact | Consultant Paediatric Surgeon"
+    },
+    {
+     "key": "contact.__desc",
+     "group": "Browser tab & Google",
+     "label": "Description (shown by Google)",
+     "html": false,
+     "default": "Book an appointment or get in touch with Dr. Muniswaran A/L Nadesin's clinic."
+    },
+    {
+     "key": "contact.01",
+     "group": "Page heading — Book a consultation",
+     "label": "Small heading",
+     "html": false,
+     "default": "Contact"
+    },
+    {
+     "key": "contact.02",
+     "group": "Page heading — Book a consultation",
+     "label": "Heading",
+     "html": false,
+     "default": "Book a consultation"
+    },
+    {
+     "key": "contact.03",
+     "group": "Page heading — Book a consultation",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Reach out via phone, WhatsApp, or the form below — the clinic team will get back to you."
+    },
+    {
+     "key": "contact.04",
+     "group": "Section",
+     "label": "Heading",
+     "html": false,
+     "default": "Clinic"
+    },
+    {
+     "key": "contact.05",
+     "group": "Section",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Dr. Muniswaran A/L Nadesin — Paediatric Surgery"
+    },
+    {
+     "key": "contact.06",
+     "group": "Section",
+     "label": "Heading",
+     "html": false,
+     "default": "Address"
+    },
+    {
+     "key": "contact.07",
+     "group": "Section",
+     "label": "Heading",
+     "html": false,
+     "default": "Phone"
+    },
+    {
+     "key": "contact.08",
+     "group": "Section",
+     "label": "Heading",
+     "html": false,
+     "default": "Hours"
+    },
+    {
+     "key": "contact.09",
+     "group": "Section",
+     "label": "Heading",
+     "html": false,
+     "default": "WhatsApp"
+    },
+    {
+     "key": "contact.10",
+     "group": "Section",
+     "label": "Heading",
+     "html": false,
+     "default": "Request an appointment"
+    },
+    {
+     "key": "contact.11",
+     "group": "Section",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Fill in the form and the clinic will contact you to confirm a time."
+    },
+    {
+     "key": "contact.12",
+     "group": "Div",
+     "label": "Heading",
+     "html": false,
+     "default": "Thank you!"
+    },
+    {
+     "key": "contact.13",
+     "group": "Div",
+     "label": "Paragraph",
+     "html": false,
+     "default": "Your appointment request has been received. Our clinic team will contact you shortly to confirm a time."
+    },
+    {
+     "key": "contact.14",
+     "group": "Div",
+     "label": "Button / link",
+     "html": false,
+     "default": "Submit Another Request"
+    }
+   ]
+  }
+ }
+}
