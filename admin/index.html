@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Website Editor | Dr. Muniswaran</title>
+<title>Content Management System | Dr. Muniswaran</title>
 <link rel="icon" type="image/png" href="../img/logo-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
@@ -17,24 +17,43 @@ h1,h2,h3{font-family:'Source Serif 4',Georgia,serif;color:var(--navy);margin:0}
 button{font:inherit;cursor:pointer}
 [hidden]{display:none!important}
 
-/* login */
-.login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
-.login-card{width:100%;max-width:400px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:34px 30px;box-shadow:0 18px 50px rgba(12,32,56,.10);text-align:center}
-.login-card img{width:64px;height:64px;object-fit:contain;margin-bottom:10px}
-.login-card h1{font-size:24px;margin-bottom:4px}
-.login-card p{margin:0 0 22px;color:var(--slate);font-size:14px}
+/* login (same look as the earlier private-preview sign-in page) */
+.login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px 16px;
+  background:radial-gradient(900px 500px at 15% -10%,#dcecf8 0%,transparent 60%),radial-gradient(800px 500px at 100% 110%,#e3f1f1 0%,transparent 55%),var(--bg)}
+.login-card{width:100%;max-width:420px;margin-top:64px;background:#fff;border:1px solid var(--line);border-radius:24px;padding:36px 32px 28px;
+  box-shadow:0 24px 60px rgba(12,32,56,.12),0 2px 6px rgba(12,32,56,.05);text-align:center}
+.logo{width:96px;height:96px;border-radius:50%;background:#fff;box-shadow:0 8px 24px rgba(12,32,56,.15);display:flex;align-items:center;justify-content:center;margin:-68px auto 18px;padding:6px;border:1px solid var(--line)}
+.logo img{width:100%;height:100%;object-fit:contain;border-radius:50%;margin:0}
+.login-inner{margin-top:52px}
+.badge{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:#eaf3fa;border-radius:999px;padding:6px 12px;margin-bottom:14px}
+.login-card h1{font-size:26px;line-height:1.2;margin:0 0 4px}
+.login-card .role{font-size:13.5px;font-weight:600;color:var(--blue);margin:0 0 14px}
+.login-card .lede{font-size:14.5px;line-height:1.55;color:var(--slate);margin:0 0 24px}
+.login-card form,.login-card .field{text-align:left}
+.login-card .field{margin-bottom:16px}
+.login-card .field input{font-size:15.5px;padding:13px 14px;border-radius:14px}
+.login-card .field input:focus{box-shadow:0 0 0 4px rgba(47,111,168,.14)}
+.pw input{padding-right:50px}
+.eye{position:absolute;top:50%;right:6px;transform:translateY(-50%);width:40px;height:40px;border:0;background:transparent;color:var(--slate);border-radius:10px;display:flex;align-items:center;justify-content:center;padding:0}
+.eye:hover{color:var(--blue);background:#eaf3fa}
+.eye .off{display:none}.eye.on .off{display:block}.eye.on .show{display:none}
+.login-card .btn{width:100%;font-size:16px;padding:14px 20px;margin-top:4px;box-shadow:0 10px 24px rgba(47,111,168,.28)}
+.login-card .btn:hover{transform:translateY(-1px)}
+.help{margin:22px 0 0;padding-top:18px;border-top:1px solid var(--line);font-size:13px;line-height:1.6;color:var(--slate)}
+.help a{color:var(--blue-dark);font-weight:600;text-decoration:none}.help a:hover{text-decoration:underline}
+@media(max-width:420px){.login-card{padding:32px 22px 24px}.login-card h1{font-size:23px}}
 .field{text-align:left;margin-bottom:14px}
 .field label{display:block;font-weight:600;font-size:13px;margin-bottom:6px;color:var(--navy)}
 .field input{width:100%;font:inherit;padding:11px 13px;border:1.5px solid var(--line);border-radius:10px;background:#f7fafd}
 .field input:focus,textarea:focus,.inp:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(47,111,168,.15);background:#fff}
-.pw{position:relative}.pw button{position:absolute;right:8px;top:50%;transform:translateY(-50%);border:0;background:none;color:var(--slate);font-size:12.5px;font-weight:600;padding:6px}
+.pw{position:relative}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:11px 22px;font-weight:600;font-size:14.5px;background:var(--blue);color:#fff;transition:.15s}
 .btn:hover{background:var(--blue-dark)}.btn:disabled{opacity:.55;cursor:default}
 .btn--wide{width:100%}
 .btn--ghost{background:#fff;color:var(--navy);border:1.5px solid var(--line)}.btn--ghost:hover{background:var(--bg)}
 .btn--danger{background:#fff;color:var(--bad);border:1.5px solid #f0c7c4}.btn--danger:hover{background:#fdf0ef}
 .btn--sm{padding:7px 14px;font-size:13px}
-.err{color:var(--bad);font-size:13.5px;margin:0 0 12px;min-height:0}
+.err{background:#fdeeee;border:1px solid #f3c6c6;color:#9b2226;border-radius:12px;padding:11px 14px;font-size:14px;margin:0 0 16px;text-align:left}.err:empty{display:none}
 
 /* app shell */
 .topbar{position:sticky;top:0;z-index:30;background:var(--navy);color:#fff;display:flex;align-items:center;gap:14px;padding:10px 22px}
@@ -102,22 +121,33 @@ textarea{min-height:44px;line-height:1.5}
 
 <!-- ============ LOGIN ============ -->
 <div class="login-wrap" id="login" hidden>
-  <form class="login-card" id="loginForm" autocomplete="on">
-    <img src="../img/logo-mark.png" alt="">
-    <h1>Website Editor</h1>
-    <p>Dr. Muniswaran A/L Nadesin — sign in to edit the website.</p>
-    <div class="field"><label for="em">Email</label><input id="em" type="email" autocomplete="username" required></div>
-    <div class="field"><label for="pw">Password</label><div class="pw"><input id="pw" type="password" autocomplete="current-password" required><button type="button" id="pwShow">Show</button></div></div>
-    <p class="err" id="loginErr"></p>
-    <button class="btn btn--wide" id="loginBtn" type="submit">Sign in</button>
-  </form>
+  <main class="login-card">
+    <div class="logo"><img src="../img/logo-mark.png" alt="Dr. Muniswaran A/L Nadesin logo"></div>
+    <div class="login-inner">
+      <span class="badge">Content Management System</span>
+      <h1>Dr. Muniswaran A/L Nadesin</h1>
+      <p class="role">Consultant Paediatric Surgeon</p>
+      <p class="lede">Please sign in to manage the website content.</p>
+      <p class="err" id="loginErr" role="alert"></p>
+      <form id="loginForm" autocomplete="on">
+        <div class="field"><label for="em">Email</label><input id="em" type="email" autocomplete="username" autocapitalize="none" spellcheck="false" required autofocus></div>
+        <div class="field"><label for="pw">Password</label>
+          <div class="pw"><input id="pw" type="password" autocomplete="current-password" required>
+            <button type="button" class="eye" id="pwShow" aria-label="Show password" aria-pressed="false" title="Show password"><svg class="show" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg><svg class="off" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.9 17.9A10.6 10.6 0 0 1 12 19c-6.4 0-10-7-10-7a17.6 17.6 0 0 1 4.1-4.9M9.9 5.2A9.9 9.9 0 0 1 12 5c6.4 0 10 7 10 7a17.7 17.7 0 0 1-2.2 3.2M1 1l22 22"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg></button>
+          </div>
+        </div>
+        <button class="btn" id="loginBtn" type="submit">Sign in</button>
+      </form>
+      <p class="help">Need help signing in? Contact <a href="https://click4techsolutions.com/" target="_blank" rel="noopener">Click 4 Tech Solutions PLT</a>.</p>
+    </div>
+  </main>
 </div>
 
 <!-- ============ APP ============ -->
 <div id="app" hidden>
   <div class="topbar">
     <img src="../img/logo-mark.png" alt="">
-    <strong>Website Editor</strong>
+    <strong>Content Management System</strong>
     <span class="sp"></span>
     <a href="../index.html" target="_blank" rel="noopener">View website ↗</a>
     <button id="pwBtn" type="button">Change password</button>
@@ -196,7 +226,11 @@ textarea{min-height:44px;line-height:1.5}
     if (!S.session) return show('login');
     ensureFresh().then(startApp).catch(function () { saveSession(null); show('login'); });
   }
-  $('pwShow').onclick = function () { var i = $('pw'); i.type = i.type === 'password' ? 'text' : 'password'; $('pwShow').textContent = i.type === 'password' ? 'Show' : 'Hide'; };
+  $('pwShow').onclick = function () {
+    var i = $('pw'), show = i.type === 'password', b = $('pwShow');
+    i.type = show ? 'text' : 'password'; b.classList.toggle('on', show); b.setAttribute('aria-pressed', show ? 'true' : 'false');
+    var t = show ? 'Hide password' : 'Show password'; b.setAttribute('aria-label', t); b.title = t; i.focus();
+  };
   $('loginForm').onsubmit = function (e) {
     e.preventDefault(); $('loginErr').textContent = ''; $('loginBtn').disabled = true; $('loginBtn').textContent = 'Signing in…';
     authReq('/auth/v1/token?grant_type=password', { email: $('em').value.trim(), password: $('pw').value })
@@ -241,7 +275,7 @@ textarea{min-height:44px;line-height:1.5}
       (r[3] || []).forEach(function (row) { S.rows[row.key] = row.value; });
       show('app'); resetWork(); renderSide(); renderTab();
     }).catch(function (err) {
-      saveSession(null); show('login'); $('loginErr').textContent = 'Could not load the editor: ' + err.message;
+      saveSession(null); show('login'); $('loginErr').textContent = 'Could not load the content system: ' + err.message;
     });
   }
 
