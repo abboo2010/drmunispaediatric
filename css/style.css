@@ -736,7 +736,9 @@ footer .footer-hours li span:first-child{color:var(--ink);font-weight:500}
   .pwa-banner{bottom:calc(80px + env(safe-area-inset-bottom)) !important}
 }
 
-/* ---- Services: one service at a time, left/right ---- */
+/* ---- Services: one service at a time, left/right (phones only) ---- */
+.sv-ctrl{display:none}
+@media (max-width:640px){
 .sv-slider{position:relative;scroll-margin-top:96px}
 .sv-track{display:flex;align-items:flex-start;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;overscroll-behavior-x:contain;transition:height .3s ease;outline:none}
 .sv-track::-webkit-scrollbar{display:none}
@@ -744,7 +746,6 @@ footer .footer-hours li span:first-child{color:var(--ink);font-weight:500}
 .sv-track:focus-visible{outline:2px solid var(--blue);outline-offset:4px;border-radius:24px}
 .sv-ctrl{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:22px}
 .sv-arrow{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--blue-dark);box-shadow:var(--shadow-1);cursor:pointer;transition:background .15s,color .15s,transform .15s}
-.sv-arrow:hover:not(:disabled){background:var(--blue-dark);color:#fff}
 .sv-arrow:active:not(:disabled){transform:scale(.94)}
 .sv-arrow:disabled{opacity:.35;cursor:default}
 .sv-count{display:flex;gap:9px;align-items:center}
@@ -752,4 +753,5 @@ footer .footer-hours li span:first-child{color:var(--ink);font-weight:500}
 .sv-dot.on{width:28px;background:var(--blue-dark)}
 .sv-jump a.active{background:var(--blue-dark);border-color:var(--blue-dark);color:#fff}
 .sv-jump a.active svg{color:#fff}
+}
 @media (prefers-reduced-motion:reduce){.sv-track{transition:none}}
