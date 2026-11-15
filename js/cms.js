@@ -63,6 +63,7 @@
     var phones = [v.phone1, v.phone2].filter(Boolean).join(' / ');
     var wa = waNumber(v.whatsapp), tel1 = telHref(v.phone1);
     window.CMS_CLINIC = { wa: wa, phones: [v.phone1, v.phone2].filter(Boolean), tel: tel1 };
+    try { document.dispatchEvent(new Event("cms:ready")); } catch (e) {}
     function setLink(box, text, href) {
       var a = box.querySelector('a');
       if (a) { a.textContent = text; if (href) a.setAttribute('href', href); } else box.textContent = text;

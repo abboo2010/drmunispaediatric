@@ -720,3 +720,17 @@ footer .footer-hours li span:first-child{color:var(--ink);font-weight:500}
 .pwa-footer-link{margin-left:14px;color:inherit;text-decoration:underline}
 @media (max-width:560px){.pwa-banner{left:10px;right:80px;bottom:10px;max-width:none}.pwa-text span{font-size:12px}}
 @media (prefers-reduced-motion:reduce){.pwa-banner{transition:none}}
+
+/* ---- Mobile bottom navigation ---- */
+.bottom-nav{display:none}
+@media (max-width:640px){
+  .site-header .nav,.site-header .nav-toggle{display:none !important}
+  .site-header .container{justify-content:center}
+  .bottom-nav{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:80;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-top:1px solid var(--line);box-shadow:0 -6px 24px rgba(12,32,56,.08);padding:6px 6px calc(6px + env(safe-area-inset-bottom))}
+  .bottom-nav a{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:7px 2px;border-radius:14px;font-size:11.5px;font-weight:600;color:var(--slate);text-decoration:none;-webkit-tap-highlight-color:transparent;transition:background .15s,color .15s}
+  .bottom-nav a.active{color:var(--blue-dark);background:var(--sky)}
+  .bottom-nav a:active{background:var(--sky)}
+  body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
+  .wa-float{bottom:calc(84px + env(safe-area-inset-bottom)) !important}
+  .pwa-banner{bottom:calc(80px + env(safe-area-inset-bottom)) !important}
+}
