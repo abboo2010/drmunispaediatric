@@ -10,13 +10,13 @@
   var isIOS = /iphone|ipad|ipod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
   var isAndroid = /android/i.test(ua);
   var isFirefox = /firefox|fxios/i.test(ua);
-  var isSafariMac = /^((?!chrome|android|crios|fxios|edg).)*safari/i.test(ua) && !isIOS;
   var standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
 
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () { navigator.serviceWorker.register('/sw.js').catch(function () {}); });
   }
-  if (standalone) return;                                   // already running as an installed app
+  var isMobile = isIOS || isAndroid || /mobi|iemobile|opera mini/i.test(ua);
+  if (standalone || !isMobile) return;                      // already installed, or not a mobile browser: show no install prompt
 
   function recentlyDismissed() {
     var t = parseInt(store(true, DISMISS_KEY), 10);
@@ -25,9 +25,7 @@
 
   function steps() {
     if (isIOS) return 'Tap the <b>Share</b> button <span class="pwa-ico">&#x2B06;&#xFE0E;</span> in your browser, then choose <b>Add to Home Screen</b>.';
-    if (isSafariMac) return 'In the menu bar choose <b>File &rsaquo; Add to Dock</b>.';
     if (isAndroid && isFirefox) return 'Open the Firefox menu <b>&#8942;</b> and tap <b>Install</b>.';
-    if (isFirefox) return 'Firefox on desktop can&rsquo;t install web apps. Open this site in Chrome or Edge and choose <b>Install</b>, or bookmark this page.';
     return 'Open your browser menu <b>&#8942;</b> and choose <b>Install app</b> (or <b>Add to Home screen</b>).';
   }
 
@@ -65,8 +63,8 @@
   });
   window.addEventListener('appinstalled', function () { deferred = null; hide(); document.documentElement.classList.remove('pwa-can-install'); });
 
-  // Browsers with no install event (iOS Safari/Chrome, Safari macOS, Firefox): show instructions once, politely.
-  if ((isIOS || isSafariMac || isFirefox) && !recentlyDismissed()) {
+  // Mobile browsers with no install event (iOS Safari/Chrome, Firefox on Android): show instructions once, politely.
+  if ((isIOS || (isAndroid && isFirefox)) && !recentlyDismissed()) {
     setTimeout(function () { if (!deferred && !banner) build('howto'); }, 6000);
   }
 
