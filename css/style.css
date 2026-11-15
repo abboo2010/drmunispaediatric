@@ -706,6 +706,14 @@ footer .footer-hours li span:first-child{color:var(--ink);font-weight:500}
   .hs-card{padding:26px 22px 22px}
   .hs-card h3{font-size:22px}
 }
+/* Home services: one card at a time on phones only */
+@media (max-width:640px){
+  .hs-grid{display:flex;gap:14px;position:relative;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;overscroll-behavior-x:contain;padding-bottom:6px}
+  .hs-grid::-webkit-scrollbar{display:none}
+  .hs-grid>.hs-card{flex:0 0 100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always}
+  .hs-card:hover{transform:none;box-shadow:none}
+  .hs-card:hover .hs-mark{transform:none}
+}
 @media (prefers-reduced-motion:reduce){.hs-card,.hs-mark,.hs-go svg{transition:none}.hs-card:hover{transform:none}.hs-card:hover .hs-mark{transform:none}}
 
 /* ---- App install banner ---- */
